@@ -1,0 +1,5 @@
+site/html/config/*
+!site/html/config/header.html
+!site/html/config/footer.html
+site/html/rss.xml
+site/html/sitemap.xml

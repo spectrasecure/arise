@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow: https://neosynth.net/config/*
+
+Sitemap: https://neosynth.net/sitemap.xml
