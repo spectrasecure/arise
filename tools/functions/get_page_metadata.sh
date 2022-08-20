@@ -7,5 +7,6 @@ get_page_metadata() {
         thumbnail=$(grep "Thumbnail::" <<< $metadata | cut -d '"' -f2)
         published_date=$(grep "Published Date::" <<< $metadata | cut -d '"' -f2)
         modified_date=$(grep "Modified Date::" <<< $metadata | cut -d '"' -f2)
-        canonical_url=$(grep "Web Link::" <<< $metadata | sed -n -e 's/.*\(http.*\)/\1/p')
+        relative_url=$(dirname $1 | sed 's@.*site/html@@g')
+        canonical_url="$base_url""$relative_url"
 } 
