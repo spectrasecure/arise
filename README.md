@@ -1,4 +1,4 @@
-![ARISE](./logo/arise-logo.svg)
+![ARISE](./logo/arise-logo-transparent.png)
 
 # Arise \\\ The Bash Static Site Generator
 *A step back from [Ghost](https://ghost.org/), in the shell.*
