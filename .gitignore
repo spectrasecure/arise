@@ -1,5 +1,6 @@
-site/html/config/*
-!site/html/config/header.html
-!site/html/config/footer.html
-site/html/rss.xml
-site/html/sitemap.xml
+arise-source/config/*
+!arise-source/config/header.html
+!arise-source/config/footer.html
+arise-source/rss.xml
+arise-source/sitemap.xml
+arise-source/fiction/*

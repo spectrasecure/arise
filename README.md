@@ -1,5 +1,5 @@
-# Shellsite
-*An alternative [Ghost](https://ghost.org/) in the SHell!*
+# Arise.sh \\ The Bash Static Site Generator
+*A step back from [Ghost](https://ghost.org/), in the shell.*
 
 ---
 
