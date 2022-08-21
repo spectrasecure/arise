@@ -1,10 +1,11 @@
-# Arise.sh \\\ The Bash Static Site Generator
+![ARISE](./logo/arise-logo.svg)
+
+# Arise \\\ The Bash Static Site Generator
 *A step back from [Ghost](https://ghost.org/), in the shell.*
 
 ---
 
 ## TODO
-- Refactor the rssfeeder so that it is stateless like sitemapper
 - Tear apart markdown-page-builder and markdown-sitebuilder into individual functions
 - Create new metadata types that are needed for better control:
     - is_toc: Need to check if any given index.md is a TOC so that main() knows whether it should build a normal page or a TOC out of any given page

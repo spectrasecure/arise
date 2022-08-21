@@ -4,6 +4,7 @@ clear_metadata() {
         title=''
         author=''
         description=''
+        language=''
         thumbnail=''
         published_date=''
         modified_date=''
