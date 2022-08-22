@@ -10,4 +10,4 @@ As a result of this limitation, Arise makes use of subshells to work around limi
 
 There are two types of functions Arise uses are referred to as **Inline** and **Subshell**. The difference between these two function categories is that **Inline** functions are declared with `{}` and **Subshell** functions are declared with `()`. For organisational purposes, these two respective function categories have their own respective folder for source files
 
-Upon program run, Arise pulls in all `*.sh` files in both the `inline` and `subshell` directories. As a convention, each function is broken up into its own source file. The convention used for naming source files is `function_name.sh`.
+Upon program run, Arise pulls in all `*.sh` files in both the `inline` and `subshell` directories. As a convention, each function is broken up into its own source file. The convention used for naming source files is `function_name.sh`. Documentation for individual functions and their usage can be found in the comments at the top of each function source file.

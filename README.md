@@ -1,6 +1,6 @@
 ![ARISE](./logo/arise-logo-transparent.png)
 
-# Arise \\\ The Bash Static Site Generator
+# The Bash Static Site Generator
 *A step back from [Ghost](https://ghost.org/), in the shell.*
 
 ---
@@ -17,7 +17,9 @@
 
 ### Documentation Tasks
 - Scrub personal site details out and create a real template website that is better for showcasing the program
+- Clean up code comments so that they all use a standardised format in each function
 - Add a license file
+    - Add licensing documentation for logo fonts. Both are CC-BY-SA so should be pretty simple, but I want to make a readme for attribution nonetheless
 - Write a real readme to showcase this project
 
 ### Optimisations
