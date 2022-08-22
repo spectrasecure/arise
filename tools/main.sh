@@ -1,5 +1,5 @@
 #!/bin/bash
-_version="1.0.0-alpha"
+arise_version="1.0.0-alpha"
 
 # Imports all functions, set configs, and deploys the site
 
