@@ -17,5 +17,6 @@ usage:
 
 Please visit GitHub for more detailed info: 
 https://github.com/neonspectra/arise
+
 EOF
 }
