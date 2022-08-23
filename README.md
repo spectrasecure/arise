@@ -12,7 +12,9 @@
     - eval_on: Define whether or not main() should run a function to evaluate inline bash snippets on pages
     - process_markdown: Define whether main() should run a given page through pandoc/eval before throwing on a header and footer. Useful to be able to turn this off when porting pages from existing webpages that are already have their body written in HTML and shouldn't thus be converted from markdown, but still need the header+footer appended dynamically at build time.
 - Create a function to delete all build source files after everything has been processed
-- Build out main() glue code so that it can actually run all the functions and perform a site deploy from start to finish
+- ~Build out main() glue code so that it can actually run all the functions and perform a site deploy from start to finish~
+    - Mostly done. Need to build out functions it operates on to test functionality
+    - Better error handling in the functions themselves would be a nice little bonus
 - Create GitHub actions script for deploying to GitHub Pages from a repo
 
 ### Documentation Tasks
