@@ -29,3 +29,10 @@
 - Allow inline bash eval in the site footer
 - Move the hardcoded TOC formatting in `build_toc` into a configurable template within `.config`
 - Remove the use of a temp file from `build_toc` and make it use arrays instead so that we're not using lazy IO calls for no good reason
+
+### Dependencies
+- Bash 5.1
+- GNU `cp`
+- GNU `date`
+- GNU `find`
+- GNU `awk`
