@@ -109,13 +109,13 @@ echo
 # Make sure "arise_out" is empty and copy the source files over there to work from during the build process.
 [[ -d arise-out ]] && [[ "$force_overwrite" == true ]] && rm -rf arise-out
 mkdir -p arise-out
-[[ -n "$(ls -A arise-out)" ]] && echo -e 'ERROR: The build output directory "/arise-out" is not empty. Program aborted to prevent overwrite of existing data.\nPlease empty the output directory before running Arise againw.' && exit 1
+[[ -n "$(ls -A arise-out)" ]] && echo -e 'ERROR: The build output directory "/arise-out" is not empty. Program aborted to prevent overwrite of existing data.\n\nPlease empty the output directory before running Arise again or run your command with the "-f" flag to overwrite the existing output (dangerous).' && exit 1
 cp -rT arise-source arise-out
 
 # Run the build process depending on whatever options have been set
 if [[ "$arise_build" == "full" ]] || [[ "$arise_build" == "pages_only" ]]; then
         echo -n "Building pages..."
-        build_page_tree || { echo "ERROR: An error was encountered while building pages. Aborting build cycle."; exit 1; }
+        build_page_tree arise-out || { echo "ERROR: An error was encountered while building pages. Aborting build cycle."; exit 1; }
         echo " DONE."
 fi
 
