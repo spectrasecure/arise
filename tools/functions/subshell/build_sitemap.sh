@@ -10,8 +10,8 @@
 build_sitemap() (
 
 # Switch to sitemap directory
-cd $(dirname $1)
 sitemap=$(basename $1)
+cd $(dirname $1)
 
 # Wipe out the existing sitemap, if there is one, and declare our new sitemap
 echo '<?xml version="1.0" encoding="UTF-8"?>' > $sitemap
