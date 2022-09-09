@@ -13,6 +13,7 @@
 build_rss() (
 
 # Switch to rss file's directory
+touch $1
 rss=$(realpath $1)
 cd $(dirname $1)
 

@@ -13,6 +13,7 @@
 build_sitemap() (
 
 # Switch to sitemap directory
+touch $1
 sitemap=$(basename $1)
 cd $(dirname $1)
 
