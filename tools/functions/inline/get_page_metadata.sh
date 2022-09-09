@@ -1,4 +1,15 @@
 #!/bin/bash
+#############                                                                                            
+# DESCRIPTION
+#############
+# Pulls all the Arise-specific metadata from the header of a given page.
+#
+# This function is meant to be run inline before other functions so that it can populate the information other functions need to operate upon.
+#
+#############
+# Usage:
+# get_page_metadata source.md
+
 get_page_metadata() {
         if [[ -e $1 ]]; then
                 metadata=$(sed -e '/END ARISE/,$d' < $1)

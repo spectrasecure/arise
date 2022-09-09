@@ -1,5 +1,13 @@
 #!/bin/bash
+#############                                                                                            
+# DESCRIPTION
+#############
 # Prints help
+#
+#############
+# Usage:
+# arise_help
+
 arise_help() {
 cat <<EOF
 Welcome to Arise, a static site generator written in Bash

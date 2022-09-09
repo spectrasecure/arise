@@ -1,22 +1,33 @@
 #!/bin/bash
-arise_version="1.0.0-alpha"
+######################################
+# ARISE
+# https://github.com/neonspectra/arise
+arise_version="1.0.0"
+cd "$(dirname $0)"
+cd ../
+######################################
 
-# Imports all functions, set configs, and deploys the site
+##############################################################
+# BEGIN CONFIG - Edit these variables to fit your website
+##############################################################
 
 # Set your base website URL here.
 base_url='https://arise.sh'
 
-# Grabs our current pwd in case we're building an individual file and need to go back to it after loading all of our dependencies
-origin_pwd=$(pwd)
+# Set the path to your favicon. This should be an absolute path with reference to your siteroot.
+# This variable is only used for your RSS feed, hence why it only allows up to a singular image to be set. Your primary site favicons should be configured by editing the /config/header.html file.
+favicon="/config/favicon/favicon.ico"
 
-# Always run this script with the repo root location as pwd
-cd "$(dirname $0)"
-cd ../
+# ADVANCED: Set the site config directory. Leave this default unless you move your arise-source/config files somewhere else (not recommended).
+config="arise-out/config"
 
-config=$(realpath arise-out/config)
-favicon="/relative/path/to/favicon.ico"
+##############################################################
+# Begin main script function
+# Don't edit below this line unless you know what you're doing
+##############################################################
 
-# Check if we're running a current version of bash before potentially causing code that won't run properly on ancient bash versions (such as the ones bundled on macOS):
+
+# Check if we're running a current version of bash before potentially causing code that won't run properly on ancient bash versions
 [ "$BASH_VERSINFO" -lt 5 ] && echo -e 'ERROR: Arise requires Bash version 5 or greater to run. Please install a newer version of Bash or ensure that you are using the newest version installed on your computer.\n\nYour current version of Bash is: '"$BASH_VERSINFO"'\n\nYou can verify the current running version of Bash by running the following command: echo "$BASH_VERSINFO"' && exit 1
 
 # Makes sure that our paths have or don't have a '/' as expected regardless of user input.
@@ -24,6 +35,8 @@ favicon="/relative/path/to/favicon.ico"
 [[ $favicon != '' ]] && [[ ${favicon:0:1} != '/' ]] && favicon='/'"$favicon"
 ## Base URL should not have a '/' at the end.
 [[ ${base_url: -1} == '/' ]] && base_url=${base_url::-1}
+## Set an absolute path for $config
+config=$(realpath $config)
 
 # Source functions
 for FILE in tools/functions/inline/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
@@ -140,10 +153,14 @@ if [[ "$arise_build" == "full" ]] || [[ "$arise_build" == "sitemap_only" ]]; the
 fi
 
 if [[ "$keep_source" == false ]]; then
-        echo -n "Deleting source files from output..."
+        echo -n "Cleaning up build source files from output..."
+        # Remove every page that we built from as part of the build cycle
         while read fname; do
                 [[ -f "$fname" ]] && rm "$fname"
         done <$removelist
+        # Remove the header and footer templates
+        rm "$config/header.html"
+        rm "$config/footer.html"
         echo " DONE."
 fi
 

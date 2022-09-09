@@ -1,7 +1,14 @@
 #!/bin/bash
+#############                                                                                            
+# DESCRIPTION
+#############
 # Builds the page header
-# Takes arguments in the form of "build_header destination.html"
+#
 # This function assumes that metadata has already been fetched in the current subshell. If no metadata is present, it will do nothing.
+# 
+#############
+# Usage:
+# build_header destination.html
 
 build_header() {
         # Verify that metadata variables are populated before running.

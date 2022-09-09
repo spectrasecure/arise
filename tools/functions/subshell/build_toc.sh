@@ -1,6 +1,12 @@
 #!/bin/bash
+#############                                                                                            
+# DESCRIPTION
+#############
 # Creates a table of contents at the location of the specified source file.
-# Takes arguments in the form of "build_toc toc-source-metadata.md"
+# 
+#############
+# Usage:
+# build_toc index.md
 
 build_toc() (
 

@@ -1,5 +1,13 @@
 #!/bin/bash
+#############                                                                                            
+# DESCRIPTION
+#############
 # Displays ASCII art of the Arise logo :)
+#
+#############
+# Usage:
+# arise_logo
+
 arise_logo() {
 cat <<EOF
 =========================================================

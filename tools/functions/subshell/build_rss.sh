@@ -1,9 +1,14 @@
 #!/bin/bash
-# Command usage: rsshelper https://website.com/article.html
-#rss='../site/html/rss.xml' # Location of destination RSS file to update goes here
-
-# Begin script function below
-#############################
+#############                                                                                            
+# DESCRIPTION
+#############
+# Recursively crawls through the site and reads page metadata to generate an RSS feed for all content on the website.
+#
+# The script will output the completed RSS feed to the location specified as an argument.
+#
+#############
+# Usage:
+# build_rss rss.xml
 
 build_rss() (
 

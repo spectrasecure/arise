@@ -1,6 +1,12 @@
 #!/bin/bash
-# Builds a page from a source .md file and output the built version to 'index.html' in the same directory
-# Usage: build_page source.md
+#############
+# DESCRIPTION
+#############
+# Builds a page from a source .md file and outputs the built version to 'index.html' in the same directory
+#
+#############
+# Usage: 
+# build_page source.md
 
 build_page() (
 

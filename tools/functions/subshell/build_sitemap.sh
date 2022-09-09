@@ -1,11 +1,14 @@
 #!/bin/bash
+#############                                                                                            
+# DESCRIPTION
+#############
 # Automatically generates a sitemap at the given file location. 
 # 
 # Note that this function will map out your site using the specified location as the root of its mapping crawl. If you define a sitemap location in a subdirectory of your website, it will only map subfolders of that location.
-# Usage: "build_sitemap /path/to/sitemap.xml"
 #
-# Begin script function below
-#############################
+#############
+# Usage:
+# build_sitemap /path/to/sitemap.xml
 
 build_sitemap() (
 

@@ -1,7 +1,14 @@
 #!/bin/bash
-# Builds all pages on the site by calling build_page
-# Root site directory to recursively build from is specified as an argument.
-# Usage: build_page /path/to/arise-out/
+#############                                                                                            
+# DESCRIPTION
+#############
+# Builds all pages on the site by calling "build_page" for every markdown file it can find outside of /config.
+#
+# Note that this function actually takes the root site directory to recursively build from as an argument.
+#
+#############
+# Usage:
+# build_page /path/to/arise-out/
 
 build_page_tree() (
 cd $1
