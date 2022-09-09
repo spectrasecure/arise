@@ -4,9 +4,11 @@
 
 build_toc() (
 
-# Throw the metadata header together
-get_page_metadata $1
+# Throw the metadata header together and add the source file to the list of files to remove in cleanup
+toc_source=$(basename $1)
 cd $(dirname $1)
+get_page_metadata $toc_source
+echo "$(realpath $toc_source)" >> $removelist
 build_header index.html
 
 # Add the title and start of the table for the TOC

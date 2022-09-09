@@ -14,7 +14,6 @@ cd "$(dirname $0)"
 cd ../
 
 config=$(realpath arise-out/config)
-
 favicon="/relative/path/to/favicon.ico"
 
 # Check if we're running a current version of bash before potentially causing code that won't run properly on ancient bash versions (such as the ones bundled on macOS):
@@ -32,6 +31,10 @@ for FILE in tools/functions/subshell/* ; do [[ $FILE == *.sh ]] && source $FILE 
 
 # Display our pretty logo no matter what when the program is run :)
 arise_logo
+
+# Set default build settings
+force_overwrite=false
+keep_source=false
 
 # Read our arguments and set the build mode for processing. Display help if an invalid option is made.
 if [[ $@ == "build" ]]; then
@@ -112,6 +115,11 @@ mkdir -p arise-out
 [[ -n "$(ls -A arise-out)" ]] && echo -e 'ERROR: The build output directory "/arise-out" is not empty. Program aborted to prevent overwrite of existing data.\n\nPlease empty the output directory before running Arise again or run your command with the "-f" flag to overwrite the existing output (dangerous).' && exit 1
 cp -rT arise-source arise-out
 
+# Define a temporary file for a list of all source files for post-build cleanup
+removelist="arise-out/arise-remove-$RANDOM.tmp"
+touch $removelist
+removelist=$(realpath $removelist)
+
 # Run the build process depending on whatever options have been set
 if [[ "$arise_build" == "full" ]] || [[ "$arise_build" == "pages_only" ]]; then
         echo -n "Building pages..."
@@ -133,8 +141,11 @@ fi
 
 if [[ "$keep_source" == false ]]; then
         echo -n "Deleting source files from output..."
-        clean_output || { echo "ERROR: An error was encountered while deleting source files. Aborting build cycle."; exit 1; }
+        while read fname; do
+                [[ -f "$fname" ]] && rm "$fname"
+        done <$removelist
         echo " DONE."
 fi
 
+rm $removelist
 echo -e '\nBuild completed! Built artefacts have been generated at:\n'"$(realpath arise-out)"
