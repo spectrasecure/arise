@@ -38,8 +38,8 @@ config="arise-out/config"
 config=$(realpath $config)
 
 # Source functions
-for FILE in tools/functions/inline/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
-for FILE in tools/functions/subshell/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
+for FILE in functions/inline/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
+for FILE in functions/subshell/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
 
 # Display our pretty logo no matter what when the program is run :)
 arise_logo
