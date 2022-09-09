@@ -29,11 +29,7 @@ else
         build_footer index.html
 fi
 
-# Inline Evaluations - DISABLED / BETA
-#while grep "<pre>sh#" index.html
-#do
-#        replacement=$(bash <<< $(sed -n -e s$'\001''<pre>sh#\(.*\)</pre>'$'\001''\1'$'\001''p' < index.html | head -1))
-#        awk 'NR==1,/<pre>sh#.*<\/pre>/{sub(/<pre>sh#.*<\/pre>/, "'"$replacement"'")}{print >"index.html"}' index.html || break
-#done
+# Inline Evaluations - DISABLED, WIP, ENABLE AT YOUR OWN PERIL
+# evaluate_inline index.html
 
 )
