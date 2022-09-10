@@ -21,7 +21,7 @@ build_header index.html
 cat >> index.html <<EOF
         <h1>'"$title"'</h1> 
         <p>
-        <table>
+        <table id="arise-toc">
         <tr>
                 <th>Date</th>
                 <th>Title</th>
