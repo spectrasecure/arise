@@ -32,7 +32,7 @@
 
 ### Dependencies
 - Bash 5.1
-- GNU `cp`
-- GNU `date`
-- GNU `find`
-- GNU `awk`
+- GNU `date` - Dependency for the RSS builder only. You see, RSS is kind of ridiculous because it asks for dates in RFC-822 (stupid) rather than the usual ISO 8601 format that developers who weren't dropped on their head as a baby use. Thankfully GNU's implementation of the date command has a flag to accomodate this, but it's not available on BSD/macOS.
+- GNU `find` - Dependency for the TOC indexer. Only the GNU version supports "-maxdepth". This flag is used for the TOC indexer function to ensure that only folders in the current directory (and not subfolders of those) get put into your indices.
+- GNU `awk` - Dependency for inline evaluations only. Not currently in use.
+- GNU `sed` - Dependency for the header metadata tag population. Required for the GNU version of the '-i' flag. BSD sed will not let you run inline sed replacements without forcing you to do an extra file write to create a backup of the original file, which you then have to run ANOTHER command to delete (lame as fuck).
