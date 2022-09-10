@@ -12,9 +12,9 @@ arise_version="1.0.0"
 
 cd "$(dirname $0)"
 
-# ADVANCED: Set the site config directory. Leave this default unless you move your arise-source/config files somewhere else (not recommended).
+# Set the site config directories. Don't touch this-- changing the config location is not supported at this time
 config="arise-out/config"
-source $config/arise.conf
+source arise-source/config/arise.conf
 
 # Check if we're running a current version of bash before potentially causing code that won't run properly on ancient bash versions
 [ "$BASH_VERSINFO" -lt 5 ] && echo -e 'ERROR: Arise requires Bash version 5 or greater to run. Please install a newer version of Bash or ensure that you are using the newest version installed on your computer.\n\nYour current version of Bash is: '"$BASH_VERSINFO"'\n\nYou can verify the current running version of Bash by running the following command: echo "$BASH_VERSINFO"' && exit 1
