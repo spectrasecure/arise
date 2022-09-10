@@ -24,5 +24,6 @@ build_header() {
                 sed -i "s^{{modified_date}}^$modified_date^g" $1
                 sed -i "s^{{canonical_url}}^$canonical_url^g" $1
                 sed -i "s^{{base_url}}^$base_url^g" $1
+                sed -i "s^{{global_name}}^$global_name^g" $1
         }
 }
