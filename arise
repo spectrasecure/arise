@@ -24,8 +24,6 @@ source arise-source/config/arise.conf
 [[ $favicon != '' ]] && [[ ${favicon:0:1} != '/' ]] && favicon='/'"$favicon"
 ## Base URL should not have a '/' at the end.
 [[ ${base_url: -1} == '/' ]] && base_url=${base_url::-1}
-## Set an absolute path for $config
-config=$(realpath $config)
 
 # Source functions
 for FILE in functions/inline/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
@@ -116,6 +114,8 @@ echo
 mkdir -p arise-out
 [[ -n "$(ls -A arise-out)" ]] && echo -e 'ERROR: The build output directory "/arise-out" is not empty. Program aborted to prevent overwrite of existing data.\n\nPlease empty the output directory before running Arise again or run your command with the "-f" flag to overwrite the existing output (dangerous).' && exit 1
 cp -r "arise-source/". "arise-out"
+## Set an absolute path for $config
+config=$(realpath $config)
 
 # Define a temporary file for a list of all source files for post-build cleanup
 removelist="arise-out/arise-remove-$RANDOM.tmp"
