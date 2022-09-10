@@ -14,16 +14,34 @@ build_header() {
         # Verify that metadata variables are populated before running.
         [[ $title != '' ]] && {
                 cat $config/header.html > $1
-
+                
+                # Replace all tags with their value. Ampersands are a special character in sed, so we have to clean them up using bash string manipulation before running the sed global replace.
+                title=${title//&/\\&}
                 sed -i "s^{{title}}^$title^g" $1
+
+                author=${author//&/\\&}
                 sed -i "s^{{author}}^$author^g" $1
+                
+                description=${description//&/\\&}
                 sed -i "s^{{description}}^$description^g" $1
+                
+                language=${language//&/\\&}
                 sed -i "s^{{language}}^$language^g" $1
+                
+                thumbnail=${thumbnail//&/\\&}
                 sed -i "s^{{thumbnail}}^$thumbnail^g" $1
+                
                 sed -i "s^{{published_date}}^$published_date^g" $1
+                
                 sed -i "s^{{modified_date}}^$modified_date^g" $1
+                
+                canonical_url=${canonical_url//&/\\&}
                 sed -i "s^{{canonical_url}}^$canonical_url^g" $1
+                
+                base_url=${base_url//&/\\&}
                 sed -i "s^{{base_url}}^$base_url^g" $1
+                
+                global_name=${global_name//&/\\&}
                 sed -i "s^{{global_name}}^$global_name^g" $1
         }
 }
