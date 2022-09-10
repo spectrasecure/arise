@@ -32,6 +32,8 @@
 
 ### Dependencies
 - Bash 5.1
+    - **Used for:** 😐
+    - **Why:** Do you see what language this program is written in?
 - GNU `date`
     - **Used for:** `build_rss` - RSS feed generator function
     - **Why:** You see, RSS is kind of ridiculous because it asks for dates in RFC-822 (stupid) rather than the usual ISO 8601 format that developers who weren't dropped on their head as a baby use. Thankfully GNU's implementation of the date command has a flag to accomodate this, but it's not available on BSD/macOS.
