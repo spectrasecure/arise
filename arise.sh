@@ -3,28 +3,18 @@
 # ARISE
 # https://github.com/neonspectra/arise
 arise_version="1.0.0"
-cd "$(dirname $0)"
 ######################################
-
-##############################################################
-# BEGIN CONFIG - Edit these variables to fit your website
-##############################################################
-
-# Set your base website URL here.
-base_url='https://arise.sh'
-
-# Set the path to your favicon. This should be an absolute path with reference to your siteroot.
-# This variable is only used for your RSS feed, hence why it only allows up to a singular image to be set. Your primary site favicons should be configured by editing the /config/header.html file.
-favicon="/config/favicon/favicon.ico"
-
-# ADVANCED: Set the site config directory. Leave this default unless you move your arise-source/config files somewhere else (not recommended).
-config="arise-out/config"
 
 ##############################################################
 # Begin main script function
 # Don't edit below this line unless you know what you're doing
 ##############################################################
 
+cd "$(dirname $0)"
+
+# ADVANCED: Set the site config directory. Leave this default unless you move your arise-source/config files somewhere else (not recommended).
+config="arise-out/config"
+source $config/arise.conf
 
 # Check if we're running a current version of bash before potentially causing code that won't run properly on ancient bash versions
 [ "$BASH_VERSINFO" -lt 5 ] && echo -e 'ERROR: Arise requires Bash version 5 or greater to run. Please install a newer version of Bash or ensure that you are using the newest version installed on your computer.\n\nYour current version of Bash is: '"$BASH_VERSINFO"'\n\nYou can verify the current running version of Bash by running the following command: echo "$BASH_VERSINFO"' && exit 1
@@ -157,9 +147,10 @@ if [[ "$keep_source" == false ]]; then
         while read fname; do
                 [[ -f "$fname" ]] && rm "$fname"
         done <$removelist
-        # Remove the header and footer templates
+        # Remove site config templates
         rm "$config/header.html"
         rm "$config/footer.html"
+        rm "$config/arise.conf"
         echo " DONE."
 fi
 
