@@ -24,11 +24,6 @@
     - Add licensing documentation for logo fonts. Both are CC-BY-SA so should be pretty simple, but I want to make a readme for attribution nonetheless
 - Write a real readme to showcase this project
 
-### Optimisations
-- Refactor inline bash evaluation function. Right now it only works on very tiny/simple snippets because my logic for parsing out the command string for eval isn't very good.
-- Allow inline bash eval in the site footer
-- Move the hardcoded TOC formatting in `build_toc` into a configurable template within `.config`
-- Remove the use of a temp file from `build_toc` and make it use arrays instead so that we're not using lazy IO calls for no good reason
 
 ### Dependencies
 - Bash 5.1
@@ -36,7 +31,7 @@
     - **Why:** Do you see what language this program is written in?
 - GNU `date`
     - **Used for:** `build_rss` - RSS feed generator function
-    - **Why:** You see, RSS is kind of ridiculous because it asks for dates in RFC-822 (stupid) rather than the usual ISO 8601 format that developers who weren't dropped on their head as a baby use. Thankfully GNU's implementation of the date command has a flag to accomodate this, but it's not available on BSD/macOS.
+    - **Why:** You see, RSS is kind of ridiculous because it asks for dates in RFC-822 (stupid) rather than the usual ISO 8601 format used by developers who weren't dropped on their head as a child. GNU's implementation of the date command has a flag to accomodate this, but it's not available on BSD/macOS.
 - GNU `find`
     - **Used for:** `build_toc` - Function that builds TOC/index pages
     - **Why:** Only the GNU version supports `-maxdepth`. This flag is used for the TOC indexer function to ensure that only folders in the current directory (and not subfolders of those) get put into your indices.
@@ -47,3 +42,13 @@
     - **Used for:** `build_header` - Function that populates headers with metadata from page source files
     Dependency for the header metadata tag population. 
     - **Why:** This script makes use of the GNU version of the '-i' flag. BSD sed will not let you run inline sed replacements without forcing you to do an extra file write to create a backup of the original file, which you then have to run ANOTHER command to delete (literally why).
+
+### Roadmap / To-Do / Feature Ideas
+- Refactor inline bash evaluation function and enable its usage. Right now it only works on very tiny/simple snippets because I wrote the logic for it because I thought it would be funny to implement (it was). I wasn't thinking of it in terms of a feature that is actually functional and practical to use, but I'd like to do that now.
+   - Allow inline bash evaluations in the site headers and footers
+- Add support for metadata tag usage in the site footer.
+- Move the hardcoded TOC formatting in `build_toc` into a configurable template within `.config`
+- Remove the use of a temp file from `build_toc` and make it use arrays instead so that we're not using IO calls for no good reason. I was being a lazy idiot when I wrote this function. Sorry.
+
+### Legal & Acknowledgements
+These can be found on a separate page [here](legal/README.md).
