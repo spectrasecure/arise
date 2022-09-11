@@ -52,6 +52,8 @@
 - Add support for metadata tag usage in the site footer.
 - Move the hardcoded TOC formatting in `build_toc` into a configurable template within `.config`
 - Remove the use of a temp file from `build_toc` and make it use arrays instead so that we're not using IO calls for no good reason. I was being a lazy idiot when I wrote this function. Sorry.
+- Bundle and implement [Markdown.pl](https://daringfireball.net/projects/markdown/) as a fallback rendering engine for systems that do not have pandoc installed.
+- Add support for inline include statements for html snippets saved in the `/config` folder so that it's possible to write reusable little bits for pages.
 
 ### Legal & Acknowledgements
 These can be found on a separate page [here](legal/README.md).
