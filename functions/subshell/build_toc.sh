@@ -40,7 +40,7 @@ clear_metadata
 done
 
 # Sort all of our contents by date so that they're not in random order
-sort $toc_tmp >> index.html
+sort -r $toc_tmp >> index.html
 rm $toc_tmp
 
 # Final page bits
