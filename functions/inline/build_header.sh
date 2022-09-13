@@ -15,6 +15,9 @@ build_header() {
         [[ $title != '' ]] && {
                 cat $config/header.html > $1
                 
+                # If enabled (default:true), add a configurable content header after the metadata header. The purpose of this is to enable a standardised header for stuff like post dates that should be on *most* pages, but can be disabled on pages the user considers special and wants to build out completely on their own.
+                [[ $content_header == "true" ]] && cat $config/content_header.html >> $1
+                
                 # Replace all tags with their value. Ampersands are a special character in sed, so we have to clean them up using bash string manipulation before running the sed global replace.
                 title=${title//&/\\&}
                 sed -i "s^{{title}}^$title^g" $1

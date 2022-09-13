@@ -149,6 +149,7 @@ if [[ "$keep_source" == false ]]; then
         done <$removelist
         # Remove site config templates
         rm "$config/header.html"
+        rm "$config/content_header.html"
         rm "$config/footer.html"
         rm "$config/arise.conf"
         echo " DONE."

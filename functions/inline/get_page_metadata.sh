@@ -24,10 +24,25 @@ get_page_metadata() {
                 modified_date=$(grep "Modified Date::" <<< $metadata | cut -d '"' -f2)
                 
                 # Optional page settings with default settings
-                is_toc="false"
-                process_markdown="true"
+
+                # is_toc default: false
                 is_toc=$(grep "toc::" <<< $metadata | cut -d '"' -f2)
-                process_markdown=$(grep "markdown::" <<< $metadata | cut -d '"' -f2)
+                if [[ $is_toc != "true" ]]; then
+                        is_toc="false"
+                fi
+                        
+                # process_markdown default: true
+                process_markdown=$(grep "process_markdown::" <<< $metadata | cut -d '"' -f2)
+                if [[ $process_markdown != "false" ]]; then
+                        process_markdown="true"
+                fi
+                
+                # content_header default: true
+                content_header=$(grep "content_header::" <<< $metadata | cut -d '"' -f2)
+                if [[ $content_header != "false" ]]; then
+                        content_header="true"
+                fi
+
                 
                 # URL
                 relative_url="$(realpath $(dirname $1) | sed 's@.*arise-out@@g')"'/'
