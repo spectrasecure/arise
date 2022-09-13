@@ -6,20 +6,12 @@
 ---
 
 ## TODO
-- Tear apart markdown-page-builder and markdown-sitebuilder into individual functions
 - Create new metadata types that are needed for better control:
-    - is_toc: Need to check if any given index.md is a TOC so that main() knows whether it should build a normal page or a TOC out of any given page
-    - eval_on: Define whether or not main() should run a function to evaluate inline bash snippets on pages
-    - process_markdown: Define whether main() should run a given page through pandoc/eval before throwing on a header and footer. Useful to be able to turn this off when porting pages from existing webpages that are already have their body written in HTML and shouldn't thus be converted from markdown, but still need the header+footer appended dynamically at build time.
-- Create a function to delete all build source files after everything has been processed
-- ~Build out main() glue code so that it can actually run all the functions and perform a site deploy from start to finish~
-    - Mostly done. Need to build out functions it operates on to test functionality
-    - Better error handling in the functions themselves would be a nice little bonus
-- Create GitHub actions script for deploying to GitHub Pages from a repo
+    - `show_date` - Determine whether a date snippet is appended to the page or not
+- Create GitHub actions script for deploying to GitHub Pages or other cloud location from a repo
 
 ### Documentation Tasks
 - Scrub personal site details out and create a real template website that is better for showcasing the program
-- Clean up code comments so that they all use a standardised format in each function
 - Add a license file
     - Add licensing documentation for logo fonts. Both are CC-BY-SA so should be pretty simple, but I want to make a readme for attribution nonetheless
 - Write a real readme to showcase this project
@@ -51,9 +43,10 @@
    - Allow inline bash evaluations in the site headers and footers
 - Add support for metadata tag usage in the site footer.
 - Move the hardcoded TOC formatting in `build_toc` into a configurable template within `.config`
-- Remove the use of a temp file from `build_toc` and make it use arrays instead so that we're not using IO calls for no good reason. I was being a lazy idiot when I wrote this function. Sorry.
 - Bundle and implement [Markdown.pl](https://daringfireball.net/projects/markdown/) as a fallback rendering engine for systems that do not have pandoc installed.
 - Add support for inline include statements for html snippets saved in the `/config` folder so that it's possible to write reusable little bits for pages.
+- Implement better error handling. Right now it's wishy washy and in many ways basically nonexistent-- most stuff will silently error or otherwise not gracefully cause an abort.
+    - As far as dependency checks, right now it only checks if your bash version is good. Maybe could consider implementing checks for the other dependencies. It's really hard to determine if something is GNU or not, though.
 
 ### Legal & Acknowledgements
 These can be found on a separate page [here](legal/README.md).

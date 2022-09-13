@@ -31,7 +31,6 @@ EOF
 clear_metadata
 
 # Make each entry into an individual table row. For now we're storing these in a temp file so that we can sort if after we're done generating all the entries in the TOC.
-# TODO: rewrite this to use arrays instead of a temp file to remove IO writes.
 toc_tmp="arise-toc-$RANDOM.tmp"
 find . -mindepth 2 -maxdepth 2 -type f -name 'index.md' | while read fname; do
 get_page_metadata $fname
