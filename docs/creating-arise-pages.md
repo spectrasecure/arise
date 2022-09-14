@@ -4,7 +4,7 @@ This documentation page will explain how Arise websites are structured, how to c
 
 ## Site Architecture Overview
 
-All pages build in Arise have a common modular structure. Each page in Arise is made up of a folder (where you can and should store any relevant page assets like images, thumbnail, etc) with an `index.md` at the root of the page. The basic structure of every page in Arise looks like this:
+All pages in Arise have a common modular structure. Each page is made up of a folder with an `index.md` at the root of the page. Thumbnails, images, and other page assets should be stored in the same folder as the page `index.md` file. The basic structure of every page in Arise can be visualised like this:
 
 ```
     .
@@ -15,9 +15,9 @@ All pages build in Arise have a common modular structure. Each page in Arise is 
     └── ...
 ```
 
-When Arise builds your site, it traverses the folder structure of the entire site and builds everything with this structure in mind.
+When Arise builds your site, it traverses the folder structure of the entire site and builds everything with the above structure in mind.
 
-For large folders full of pages, Arise also supports the creation of dynamically generated index pages. You can tell Arise to create an index page at a given folder by using the `toc` setting (described in detail below) in your index folder's `index.md`. 
+For large folders full of pages, Arise also supports the creation of dynamically generated index pages. You can tell Arise to create an index page at a given folder by using the `toc` setting (see: [Optional Settings](#optional-settings)) in your index folder's `index.md`. 
 
 The structure of an Arise website making use of indices should look something like this:
 
@@ -37,7 +37,7 @@ The structure of an Arise website making use of indices should look something li
 
 ## Creating New Pages
 
-To create a new page, simply create a folder and make an `index.md` file with an Arise metadata header at the very top of the file. A standard Arise metadata header looks something like this:
+To create a new page, simply create a folder and make an `index.md` file with an Arise metadata header at the very top of the file. A standard Arise metadata header looks like this:
 
 ```
 <!-- BEGIN ARISE ------------------------------
