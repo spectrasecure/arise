@@ -13,7 +13,7 @@
 build_page_tree() (
 cd $1
 
-find . -type f -name "*.md" -not \( -path ./config -prune \) | while read fname; do
+find . -type f -name "index.md" -not \( -path ./config -prune \) | while read fname; do
 build_page $fname
 
 # Add the source file to the list of files to remove in cleanup
