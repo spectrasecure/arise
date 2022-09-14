@@ -16,12 +16,12 @@ Welcome to Arise, a static site generator written in Bash
 
 Usage: 
 ------
-arise build -[k][f] 
+bash arise build -[k][f] 
         # Builds the entire site
         available in all build modes:
                 -k: Keeps source files in output
                 -f: Force overwrite pre-existing output
-arise -[p|s|r][k][f]
+bash arise -[p|s|r][k][f]
         # Builds only specific parts of the site
         # Useful for testing purposes
         mutually exclusive options:

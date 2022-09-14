@@ -26,8 +26,8 @@ source arise-source/config/arise.conf
 [[ ${base_url: -1} == '/' ]] && base_url=${base_url::-1}
 
 # Source functions
-for FILE in functions/inline/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
-for FILE in functions/subshell/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
+for FILE in lib/functions/inline/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
+for FILE in lib/functions/subshell/* ; do [[ $FILE == *.sh ]] && source $FILE ; done
 
 # Display our pretty logo no matter what when the program is run :)
 arise_logo
