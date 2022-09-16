@@ -54,10 +54,11 @@ page_index=$(realpath "$fname"'/index.md')
         if [ -e $page_index ]; then
                 get_page_metadata $page_index
 
-                # Convert html's ISO8601 date to RSS's RFC-822. Fuck you RSS.
-                rss_date=$(date -d "$published_date" --rfc-822)
-                
-                cat >> $rss <<EOF
+                if [[ $rss_hide != "true" ]] && [[ $is_toc != "true" ]]; then
+                        # Convert html's ISO8601 date to RSS's RFC-822. Fuck you RSS.
+                        rss_date=$(date -d "$published_date" --rfc-822)
+                        
+                        cat >> $rss <<EOF
         <item>
         <title>$title</title>
         <dc:creator>$author</dc:creator>
@@ -66,7 +67,8 @@ page_index=$(realpath "$fname"'/index.md')
         <pubDate>$rss_date</pubDate>
         </item>
 EOF
-        clear_metadata
+                fi
+                clear_metadata
         fi
 done
 

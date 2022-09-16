@@ -43,6 +43,11 @@ get_page_metadata() {
                         content_header="true"
                 fi
 
+                # rss_hide default: false
+                rss_hide=$(grep "rss_hide::" <<< $metadata | cut -d '"' -f2)
+                if [[ $rss_hide != "true" ]]; then
+                        rss_hide="false"
+                fi
                 
                 # URL
                 relative_url="$(realpath $(dirname $1) | sed 's@.*arise-out@@g')"'/'
