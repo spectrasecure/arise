@@ -35,7 +35,7 @@ EOF
         cat >> $rss <<EOF
     <image>
       <url>$base_url$favicon</url>
-      <title>$title</title>
+      <title>$global_name</title>
       <link>$base_url</link>
     </image>
 EOF
