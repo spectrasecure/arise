@@ -31,7 +31,7 @@ bash arise -[p|s|r][k][f]
 
 ------
 Please visit GitHub for more detailed info: 
-https://github.com/neonspectra/arise
+https://github.com/spectrasecure/arise
 
 EOF
 }
