@@ -85,6 +85,8 @@ Optional settings can be omitted entirely from your header. These settings conta
     - This setting is particularly useful if you are porting content from another website that already has the body of your content in HTML format and you don't want any additional processing beyond the addition of a header+footer to be done to it.
 - **toc**: (Default: **false**) This is a special setting that instructs Arise that the folder containing this `index.md` isn't actually a normal page, but rather a folder containing other pages that you'd like a traversable index/TOC built for. If you set `toc` to `"true"`, Arise will look through all the folders contained in the current folder, grab their metadata if they are Arise-formatted pages, and generate a pretty index for you.
     - If this setting is enabled, Arise will ignore all content present after the Arise metadata header and create an index/TOC page instead.
+- **rss_hide**: (Default: **false**) When set to "true", this setting hides your page from the RSS feed. This is useful for meta pages (privacy policy, contact, etc) that you don't want to send to the feeds for your RSS readers.
+    - Note that dynamically generated TOC pages are automatically hidden from your RSS feed, so you do not need to manually add this setting for those pages.
 
 ## Caveats & Gotchas
 There are some caveats to how this data is processed that you should be mindful of.
