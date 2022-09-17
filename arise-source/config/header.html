@@ -7,7 +7,7 @@
         <meta name="HandheldFriendly" content="True" />
         <meta name="generator" content="Arise" />
 
-        <title>{{title}} \\ {{global_name}}</title>
+        <title>{{title}} · {{global_name}}</title>
         <meta name="description" content="{{description}}">
         <meta name="author" content="{{author}}">
         <!-- End Basic Metadata -->
@@ -15,7 +15,7 @@
         <!-- OpenGraph Metadata -->
         <meta property="og:site_name" content="{{global_name}}" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="{{title}} \\ {{global_name}}" />
+        <meta property="og:title" content="{{title}} · {{global_name}}" />
         <meta property="og:description" content="{{description}}" />
         <meta property="og:url" content="{{canonical_url}}" />
         <meta property="og:image" content="{{canonical_url}}{{thumbnail}}" />
@@ -25,7 +25,7 @@
     
         <!-- Twitter Metadata -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="{{title}} \\ {{global_name}}" />
+        <meta name="twitter:title" content="{{title}} · {{global_name}}" />
         <meta name="twitter:description" content="{{description}}" />
         <meta name="twitter:url" content="{{canonical_url}}" />
         <meta name="twitter:image" content="{{canonical_url}}{{thumbnail}}" />
@@ -36,34 +36,28 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/config/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/config/favicon/favicon-16x16.png">
         <link rel="manifest" href="/config/favicon/site.webmanifest">
-        <link rel="mask-icon" href="/config/favicon/safari-pinned-tab.svg" color="#000000">
-        <meta name="msapplication-TileColor" content="#2b5797">
+        <link rel="mask-icon" href="/config/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/config/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="/config/favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         <!-- End Favicon -->
 
         <!-- Styesheet+Logo -->
         <style>
                 html * {font-family:monospace,sans-serif;} 
-                body {background-color:#040011;margin:40px auto;max-width:650px;padding:0 10px;color:#ffcd00;}
-                a {color:#eca330;}
-                hr {color:#ffcd00;}
-                .sidebar {float:left;}
-                .sidebar a {color:#ffcd00;}
-                .topbar a {color:#ffcd00;}
+                body {background-color:#121619;margin:40px auto;max-width:650px;padding:0 10px;color:#65f85a;}
+                a {color:#b8f1b4;}
+                hr {color:#65f85a;}
+                .topbar a {color:#65f85a;}
         </style>
         <link rel="stylesheet" href="/config/main.css"> 
         <div class="logo"><a href="/"><img src="/config/logo.gif" /></a></div>
         <!-- End Styles+Logo -->
 
         <!-- Navigation -->
-        <nav class="sidebar">
-                <p><a href="/">Home</a></p>
-                <p><a href="/posts">Posts</a></p>
-                <p><a href="/fiction">Fiction</a></p>
-                <p><a href="/guides">Guides</a></p>
-        </nav>
         <nav class="topbar">
-                <a href="/">Home</a> ⟛ <a href="/posts">Posts</a> ⟛ <a href="/fiction">Fiction</a> ⟛ <a href="/guides">Guides</a>
+                <a href="/">Home</a> ⟛ <a href="/posts">Posts</a>
         </nav>
         <!-- End Navigation -->
 </head>

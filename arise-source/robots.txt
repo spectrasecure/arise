@@ -1,4 +1,4 @@
 User-agent: * 
-Disallow: https://neosynth.net/config/*
+Disallow: https://ari.se.net/config/*
 
-Sitemap: https://neosynth.net/sitemap.xml
+Sitemap: https://ari.se.net/sitemap.xml
