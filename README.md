@@ -1,6 +1,6 @@
 ![ARISE](./docs/logo/arise-logo_transparent.png)
 
-# The Shell Static Site Generator
+# \#!sh> Static Sites in Shell Script
 *Cyberpunk websites for the modern web.*
 
 ---
@@ -18,7 +18,7 @@ The goal of Arise is to take the lessons of yesteryear and make something novel.
 Arise is written in Bash with very few dependencies outside of the standard GNU toolchain. Arise is designed with longterm simplicity and maintainability in mind. It is unlikely that the core code Arise runs on will break in the near future due to language or dependency updates.
 
 Arise supports modern SEO features that are built into your pages out of the box without any extra effort necessary:
-- OpenGraph and TwitterCard support for rich embed details
+- [OpenGraph](https://ogp.me/) and [TwitterCard](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) support for rich embed details
 - Dynamically generated RSS feed
 - Dynamically generated search engine sitemap
 
