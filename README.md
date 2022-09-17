@@ -5,15 +5,9 @@
 
 ---
 
-## TODO
-- Create new metadata types that are needed for better control:
-    - `show_date` - Determine whether a date snippet is appended to the page or not
-- Create GitHub actions script for deploying to GitHub Pages or other cloud location from a repo
 
 ### Documentation Tasks
 - Scrub personal site details out and create a real template website that is better for showcasing the program
-- Add a license file
-    - Add licensing documentation for logo fonts. Both are CC-BY-SA so should be pretty simple, but I want to make a readme for attribution nonetheless
 - Write a real readme to showcase this project
 
 
@@ -48,5 +42,17 @@
 - Implement better error handling. Right now it's wishy washy and in many ways basically nonexistent-- most stuff will silently error or otherwise not gracefully cause an abort.
     - As far as dependency checks, right now it only checks if your bash version is good. Maybe could consider implementing checks for the other dependencies. It's really hard to determine if something is GNU or not, though.
 
-### Legal & Acknowledgements
-These can be found on a separate page [here](legal/README.md).
+### License, Disclaimers, and Acknowledgements
+All the legal bulldrek relevant to this repository can be found [here](LICENSE/README.md).
+
+A summary\* of the license terms (which is not a substitute for the above-linked licensing information itself) is:
+- The example site is MIT License
+    - **TL;DR:** You can edit and do whatever with it. Go crazy, choom. You can license your own website built off my example however you damn please.
+- The logo is Creative Commons CC-BY-SA 4.0
+    - **TL;DR:** You can do what you want with it as long as you let anyone else do the same with any derivatives you redistribute.
+- All the Arise code itself is AGPL 3.0
+    - **TL;DR:** You have to give people a copy of your version of the source code if you modify and/or redistribute it in any way when you use it to create and deploy your website.
+    - If you don't modify the Arise software code itself and don't redistribute it, you don't need to host the source code for other people. But, to be clear, removing the link to this repository from the help function constitutes as modification as far as AGPL is concerned.
+    - AGPL scares a lot of people. I'm not a lawyer and this is not legal advice, but check out [this cool article about AGPL](https://writing.kemitchell.com/2021/01/24/Reading-AGPL.html) and maybe it will make it a little less scary for you :)
+
+\*This summary highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material. Also, I am not a lawyer and none of this is legal advice.
