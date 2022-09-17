@@ -14,6 +14,7 @@ This guide assumes that you have completed steps 1-3 from [Getting Started](../R
 8. Click **Builds & deployments**.
 9. Click **Configure Preview deployments**.
 10. Click **None** and **Save**. 
+<p align="center"><img src="cloudflare-2.png" alt="Screenshot: Disable Cloudflare Preview deployments" width=50% height=50% /></p>
 
 As of this writing, if you don't IMMEDIATELY disable preview deployments, Cloudflare will automatically generate live externally-accessible "preview" URLs for every single branch in your website repo (even if your repo is private). Based on how Arise works, this will not only result in previews that are broken and do not work, but it will disclose literally everything in your repo including potentially WIP pages if your repo is private. To put a cherry on top, after preview deployments have been build for a branch, you cannot delete them without deleting and re-adding your entire damn website. What a stupid-ass system.
 
