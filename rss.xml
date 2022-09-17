@@ -4,7 +4,7 @@
     <title>Arise</title>
     <description>Arise is the most polished cloud-native static site generator written in Bash.</description>
     <link>https://ari.se.net</link>
-    <language></language>
+    <language>en</language>
     <generator>Arise</generator>
     <image>
       <url>https://ari.se.net/config/favicon/favicon.ico</url>
@@ -13,7 +13,7 @@
     </image>
     <atom:link href="https://ari.se.net/rss.xml" rel="self" type="application/rss+xml"/>
         <ttl>60</ttl>
-<lastBuildDate>Sat, 17 Sep 2022 22:29:44 +0000</lastBuildDate>
+<lastBuildDate>Sat, 17 Sep 2022 23:45:37 +0000</lastBuildDate>
         <item>
         <title>My Cool Post</title>
         <dc:creator>Spectra Secure</dc:creator>
