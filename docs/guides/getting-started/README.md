@@ -7,13 +7,15 @@ It's actually very simple to get a website up and running using Arise.
 ## Cloud Deployments
 
 1. Fork this repo
-2. Edit the example site in `/arise-source/` to your liking
+2. Edit the global Arise site configuration file at `/arise-source/config/arise.conf`
+3. Edit the example site in `/arise-source/` to your liking
     - Check out the page on [creating pages](../creating-arise-pages/README.md) for more information on the specifics of how Arise pages work
-3. Upon any new commit to the site source files, the GitHub Actions workflow present in `/.github/workflows/` will automatically build your website based on the contents of `/arise-source/` and output the built files to your `html` branch.
-4. Configure your cloud web host of choice to automatically deploy a static site from the `html` branch of your repo. Specific instructions for several notable providers can be found below:
+4. Configure your `robots.txt` in the root of the repository with your site domain and any additional crawler settings you'd like to set.
+5. Upon any new commit to the site source files, the GitHub Actions workflow present in `/.github/workflows/` will automatically build your website based on the contents of `/arise-source/` and output the built files to your `html` branch.
+6. Configure your cloud web host of choice to automatically deploy a static site from the `html` branch of your repo. Specific instructions for several notable providers can be found below:
     - [Cloudflare Pages](cloudflare/README.md)
-    - [GitHub Pages](github-pages/README.md)
     - [DigitalOcean](digitalocean/README.md)
+    - [GitHub Pages](github-pages/README.md)
 
 Congrats! Your site is now up and running! If you want to make changes to your website, you can simply make a commit to the `main` branch of your repo source files and it will automatically be deployed to your live website! Pretty wiz, yeah?
 

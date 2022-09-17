@@ -1,6 +1,6 @@
 # Arise Functions
 
-Like most larger projects build in Bash, Arise is a functional program. The folders in this directory contain the source files for each function defined for use by Arise.
+Like most larger projects build in Bash, Arise is a modular program split up into functions. The folders in this directory contain the source files for each function defined for use by Arise.
 
 ## Implementation Notes
 

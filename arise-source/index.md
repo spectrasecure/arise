@@ -3,6 +3,7 @@ Title:: "Arise: Timeless tech to build your modern website"
 
 Author:: "Spectra Secure"
 Description:: "Arise is the most polished cloud-native static site generator written in Bash."
+Language:: "en"
 Thumbnail:: "arise-icon.png"
 Published Date:: "2022-09-17"
 Modified Date:: "2022-09-17"

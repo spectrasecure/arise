@@ -3,6 +3,7 @@ Title:: "My Cool Post"
 
 Author:: "Spectra Secure"
 Description:: "This cool post is an example of a post published in Arise"
+Language:: "en"
 Thumbnail:: "kanagawa.jpg"
 Published Date:: "2022-09-17"
 Modified Date:: "2022-09-17"

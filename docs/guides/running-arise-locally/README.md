@@ -4,10 +4,12 @@ The following instructions will walk you through how to build an Arise website b
 
 1. Ensure you have the [proper dependencies](/README.md#dependencies) installed.
 2. Clone this repo and cd into it: `git clone https://github.com/spectrasecure/arise && cd arise`
-3. Edit the example site in `arise-source/` to your liking
+3. Edit the global Arise site configuration file at `/arise-source/config/arise.conf`
+4. Edit the example site in `/arise-source/` to your liking
     - Check out the page on [creating pages](../creating-arise-pages/README.md) for more information on the specifics of how Arise pages work
-4. Build Arise by running `bash arise build`
-5. Your built site will be output to `arise-out/`. It is up to you to upload these wherever to host your site.
+5. Configure your `robots.txt` in the root of the repository with your site domain and any additional crawler settings you'd like to set.
+6. Build Arise by running `bash arise build`
+7. Your built site will be output to `arise-out/`. It is up to you to upload these wherever to host your site.
 
 ### Command Line Arguments for Arise
 

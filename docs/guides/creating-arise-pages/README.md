@@ -35,6 +35,7 @@ The structure of an Arise website making use of indices should look something li
     └── ...
 ```
 
+
 ## Creating New Pages
 
 To create a new page, simply create a folder and make an `index.md` file with an Arise metadata header at the very top of the file. A standard Arise metadata header looks like this:
@@ -88,7 +89,31 @@ Optional settings can be omitted entirely from your header. These settings conta
 - **rss_hide**: (Default: **false**) When set to "true", this setting hides your page from the RSS feed. This is useful for meta pages (privacy policy, contact, etc) that you don't want to send to the feeds for your RSS readers.
     - Note that dynamically generated TOC pages are automatically hidden from your RSS feed, so you do not need to manually add this setting for those pages.
 
+## Page Themes
+
+All pages in Arise are built by concatenating the following files in the following order:
+- [/config/header.html](/arise-source/config/header.html)
+- [/config/content_header.html](/arise-source/config/content_header.html)
+- The `index.md` for the page being built
+- [/config/footer.html](/arise-source/config/footer.html)
+
+If you want to change the style or overall layout of your website, you need to edit the `/config/header.html` file for your website.
+
+By default, the stylesheet used by `/config/header.html` is [/config/main.css](/arise-source/config/main.css).
+
+The Arise header supports the following dynamic metadata tags, which will be populated with info from the page being built at build time:
+- `{{base_url}}` - The base url for your website, in the format of `https://example.com`
+- `{{global_name}}` - The human-readable global name of your website
+- `{{title}}` - The title of the page being built
+- `{{author}}` - The author of the page being built
+- `{{description}}` - The human-readable description of the page being built
+- `{{language}}` - The [ISO 639-1 language code](https://www.w3schools.com/tags/ref_language_codes.asp) for the language your page is written in.
+- `{{thumbnail}}` - The filename of your thumbnail image.
+- `{{published_date}}` - The [ISO-8601 short date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) (aka: YYYY-MM-DD) for when your page was originally published to your site.
+- `{{modified_date}}` - The [ISO-8601 short date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) (aka: YYYY-MM-DD) for when your page was last modified.
+
 ## Caveats & Gotchas
+
 There are some caveats to how this data is processed that you should be mindful of.
 
 - The metadata in the Arise header is used to generate your site's RSS feed, which is an XML document. Remember to always use [XML escape codes](https://docs.oracle.com/cd/A97335_02/apps.102/bc4j/developing_bc_projects/obcCustomXml.htm) for any of the five XML-reserved characters (`<>&'"`) for text variables in your Arise header or you will break your RSS feed.

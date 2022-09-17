@@ -3,6 +3,7 @@ Title:: "Abolish Arasaka"
 
 Author:: "Johnny Silverhand"
 Description:: "I saw Saburo Arasaka at a grocery store in Night City yesterday."
+Language:: "en"
 Thumbnail:: ""
 Published Date:: "2077-05-12"
 Modified Date:: "2077-05-12"
