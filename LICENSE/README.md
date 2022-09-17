@@ -1,3 +1,9 @@
+© 2022 Spectra Secure
+
+Contact: https://twitter.com/spectrasecure
+
+---
+
 The files that are included in this repository are defined as the "Arise Components". The Arise Contents can be broken up into three parts: the Example Site, the Arise Logo, and the Arise Software. The set of files that compose each of these parts are defined below. Different parts of the Arise Components are licensed under different terms.
 
 This document discusses the the terms that the Arise Components are licensed under, the disclaimers for the usage of the Arise Components, as well as all potentially relevant legal acknowledgements.
