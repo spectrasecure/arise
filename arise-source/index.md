@@ -18,9 +18,9 @@ Arise is a static site generator written in Bash, designed to be a fusion of ult
 
 You ever see one of those nineties zombie websites that hasn't been updated in like thirty years but is still somehow running today? [Stuff like this](http://home.mcom.com/home/welcome.html). Can you imagine a modern website lasting that long without becoming a completely broken mess?
 
-We live in a world where the mindset of "move fast, break things" has trained web developers to keep stacking more and more overdesigned trash, one node framework or polyfill at a time, onto our websites and lose sight of the fact that at the end of the day a website is just a tool to share information with other people.
+We live in a world where the mindset of "move fast, break things" has trained web developers to keep stacking more and more overdesigned trash, one node framework or polyfill at a time, onto our websites. Over time, we've lost sight of the fact that at the end of the day a website is just a tool to share information with other people.
 
-Arise was built to show that you can take simple technology like Bash that is so set in stone as to be basically indestructible at this point and use it to create modern web tools.
+Arise was built to show that you can take simple technology like Bash that is so set in stone as to be basically indestructible and use it to create modern web tools.
 
 ## Simplify deployment
 
@@ -32,7 +32,7 @@ Simply fork [Arise on Github](https://github.com/spectrasecure/arise), edit your
 
 Arise websites may be spartan on the surface, but they are designed to take advantage of modern web conventions for rich content presence and SEO.
 
-- Rich metadata for cross-site embeds with support for OpenGraph and TwitterCard
+- Rich metadata for cross-site embeds with support for [OpenGraph](https://ogp.me/) and [TwitterCard](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
 - Dynamic sitemap generation for SEO
 - Dynamic RSS feed generation
 
