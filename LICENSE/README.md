@@ -16,7 +16,7 @@ Buckle up, because this is going to be a bit of a long ride.
 
 ## Definition
 
-The "Example Site" is defined as the contents of `/arise-source/` within this repository.
+The "Example Site" is defined as the contents of `/arise-source/` within this repository (Not including the Arise logo-- that is discussed further below.).
 
 ## License Terms
 
