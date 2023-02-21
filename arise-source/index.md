@@ -1,5 +1,5 @@
 <!-- BEGIN ARISE ------------------------------
-Title:: "Arise: Timeless tech to build your modern website"
+Title:: "Bash Static Site Generator"
 
 Author:: "Spectra Secure"
 Description:: "Arise is the most polished cloud-native static site generator written in Bash."

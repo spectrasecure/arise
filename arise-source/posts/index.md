@@ -1,5 +1,5 @@
 <!-- BEGIN ARISE ------------------------------
-Title:: "Index: Fiction"
+Title:: "Index: Posts"
 
 Author:: ""
 Description:: "A collection of sample posts build with Arise"

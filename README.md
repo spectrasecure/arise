@@ -1,6 +1,6 @@
 ![ARISE](./docs/logo/arise-logo_transparent.png)
 
-# \#!sh> Static Sites in Shell Script
+# Arise >> Bash Static Stire Generator
 *Cyberpunk websites for the modern web.*
 
 ---
@@ -62,8 +62,8 @@ All of the documentation for getting started with Arise can be found within this
     Dependency for the header metadata tag population. 
     - **Why:** This script makes use of the GNU version of the '-i' flag. BSD sed will not let you run inline sed replacements without forcing you to do an extra file write to create a backup of the original file, which you then have to run ANOTHER command to delete (literally why).
 
-## Roadmap / To-Do / Feature Ideas
-- Refactor inline bash evaluation function and enable its usage. Right now it only works on very tiny/simple snippets because I wrote the logic for it because I thought it would be funny to implement (it was). I wasn't thinking of it in terms of a feature that is actually functional and practical to use, but I'd like to do that now.
+## Wishlist / To-Do / Feature Ideas
+- Refactor inline bash evaluation function and enable its usage. Right now it only works on very tiny/simple snippets. The main reason I wrote the logic was because I thought it would be funny to implement (it was). Some refactoring is absolutely necessary to make this feature practical/useful and not just a good meme.
    - Allow inline bash evaluations in the site headers and footers
 - Add support for metadata tag usage in the site footer.
 - Move the hardcoded TOC formatting in `build_toc` into a configurable template within `.config`
