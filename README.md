@@ -1,6 +1,6 @@
 ![ARISE](./docs/logo/arise-logo_transparent.png)
 
-# Arise >> Bash Static Stire Generator
+# Arise // Bash Static Site Generator
 *Cyberpunk websites for the modern web.*
 
 ---
