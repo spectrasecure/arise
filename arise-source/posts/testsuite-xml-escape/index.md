@@ -5,8 +5,8 @@ Author:: "Spectra Secure & < > ' "
 Description:: "This post tests if we are properly filtering XML reserved characters in page metadata & < > ' "
 Language:: "en"
 Thumbnail:: "kanagawa.jpg"
-Published Date:: "2022-09-17"
-Modified Date:: "2022-09-17"
+Published Date:: "2023-11-08"
+Modified Date:: "2023011-08"
 
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 
