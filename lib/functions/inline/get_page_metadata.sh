@@ -15,9 +15,22 @@ get_page_metadata() {
                 metadata=$(sed -e '/END ARISE/,$d' < $1)
 
                 # Main page metadata
-                title=$(grep "Title::" <<< $metadata | cut -d '"' -f2)
-                author=$(grep "Author::" <<< $metadata | cut -d '"' -f2)
-                description=$(grep "Description::" <<< $metadata | cut -d '"' -f2)
+                # For title, author, and metadata we have to be extra careful how we parse them because a user might want to have quotation marks in the actual content so we don't want that to break.
+                title="$(grep "Title::" <<< $metadata)" # Grab the line with the metadata we want
+                title="${title/%\"/}" # Remove the trailing quote at the end
+                title="${title/#Title:: /}" # Remove the name of the metadata variable from the start
+                title="${title/#\"/}" # Remove the quote at the start of the parsed variable
+
+                author="$(grep "Author::" <<< $metadata)"
+                author="${author/%\"/}"
+                author="${author/#Author:: /}"
+                author="${author/#\"/}"
+                
+                description="$(grep "Description::" <<< $metadata)"
+                description="${author/%\"/}"
+                description="${description/#Description:: /}"
+                description="${description/#\"/}"
+
                 language=$(grep "Language::" <<< $metadata | cut -d '"' -f2)
                 thumbnail=$(grep "Thumbnail::" <<< $metadata | cut -d '"' -f2)
                 published_date=$(grep "Published Date::" <<< $metadata | cut -d '"' -f2)
