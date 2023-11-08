@@ -112,10 +112,11 @@ The Arise header supports the following dynamic metadata tags, which will be pop
 - `{{published_date}}` - The [ISO-8601 short date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) (aka: YYYY-MM-DD) for when your page was originally published to your site.
 - `{{modified_date}}` - The [ISO-8601 short date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) (aka: YYYY-MM-DD) for when your page was last modified.
 
+Note that Arise automatically checks the relevant metadata strings (title, author, description) for XML-unsafe characters and replaces them with [XML escape codes](https://docs.oracle.com/cd/A97335_02/apps.102/bc4j/developing_bc_projects/obcCustomXml.htm) at runtime to ensure that you don't accidentally break your sitemap or RSS feed.
+
 ## Caveats & Gotchas
 
 There are some caveats to how this data is processed that you should be mindful of.
 
-- The metadata in the Arise header is used to generate your site's RSS feed, which is an XML document. Remember to always use [XML escape codes](https://docs.oracle.com/cd/A97335_02/apps.102/bc4j/developing_bc_projects/obcCustomXml.htm) for any of the five XML-reserved characters (`<>&'"`) for text variables in your Arise header or you will break your RSS feed.
 - Arise specifically looks for files titled `index.md` for its build process. Do yourself a favour and don't name files `index.md` if you don't want Arise to include them.
 - `/config` is a specially directory reserved for site templates and live sitewide assets. Arise will not build pages in this folder or its subfolders.
