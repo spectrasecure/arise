@@ -22,6 +22,11 @@ get_page_metadata() {
                 thumbnail=$(grep "Thumbnail::" <<< $metadata | cut -d '"' -f2)
                 published_date=$(grep "Published Date::" <<< $metadata | cut -d '"' -f2)
                 modified_date=$(grep "Modified Date::" <<< $metadata | cut -d '"' -f2)
+
+                # Clean text metadata for XML special characters so we don't break the sitemap or RSS feed
+                title="$(clean_xml_string "$title")"
+                author="$(clean_xml_string "$author")"
+                description="$(clean_xml_string "$description")"
                 
                 # Optional page settings with default settings
 
