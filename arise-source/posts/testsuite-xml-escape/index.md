@@ -1,8 +1,8 @@
 <!-- BEGIN ARISE ------------------------------
-Title:: "Test Suite - XML Reserved Characters & < > ' "
+Title:: "Test Suite - XML Reserved Characters & < > ' ""
 
-Author:: "Spectra Secure & < > ' "
-Description:: "This post tests if we are properly filtering XML reserved characters in page metadata & < > ' "
+Author:: "Spectra Secure & < > ' ""
+Description:: "This post tests if we are properly filtering XML reserved characters in page metadata & < > ' ""
 Language:: "en"
 Thumbnail:: "kanagawa.jpg"
 Published Date:: "2023-11-08"
