@@ -2,7 +2,7 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>Arise</title>
-    <description>Arise is the most polished cloud-native static site generator written in Bash.</description>
+    <description>Spectra Secure</description>
     <link>https://ari.se.net</link>
     <language>en</language>
     <generator>Arise</generator>
@@ -13,18 +13,25 @@
     </image>
     <atom:link href="https://ari.se.net/rss.xml" rel="self" type="application/rss+xml"/>
         <ttl>60</ttl>
-<lastBuildDate>Wed, 08 Nov 2023 15:17:31 +0000</lastBuildDate>
+<lastBuildDate>Wed, 08 Nov 2023 23:47:00 +0000</lastBuildDate>
         <item>
         <title>My Cool Post</title>
         <dc:creator>Spectra Secure</dc:creator>
-        <description>This cool post is an example of a post published in Arise</description>
+        <description>Spectra Secure</description>
         <link>https://ari.se.net/posts/my-cool-post/</link>
         <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
         </item>
         <item>
+        <title>Test Suite - XML Reserved Characters &38; &60; &62; &39; &34;</title>
+        <dc:creator>Spectra Secure &38; &60; &62; &39; &34;</dc:creator>
+        <description>Spectra Secure &38; &60; &62; &39; </description>
+        <link>https://ari.se.net/posts/testsuite-xml-escape/</link>
+        <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
         <title>Abolish Arasaka</title>
         <dc:creator>Johnny Silverhand</dc:creator>
-        <description>I saw Saburo Arasaka at a grocery store in Night City yesterday.</description>
+        <description>Johnny Silverhand</description>
         <link>https://ari.se.net/posts/abolish-arasaka/</link>
         <pubDate>Wed, 12 May 2077 00:00:00 +0000</pubDate>
         </item>
