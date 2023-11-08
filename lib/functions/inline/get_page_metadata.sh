@@ -17,19 +17,19 @@ get_page_metadata() {
                 # Main page metadata
                 # For title, author, and metadata we have to be extra careful how we parse them because a user might want to have quotation marks in the actual content so we don't want that to break.
                 title="$(grep "Title::" <<< $metadata)" # Grab the line with the metadata we want
-                title="${title/%\"/}" # Remove the trailing quote at the end
-                title="${title/#Title:: /}" # Remove the name of the metadata variable from the start
-                title="${title/#\"/}" # Remove the quote at the start of the parsed variable
+                title="${title%\"}" # Remove the trailing quote at the end
+                title="${title#Title:: }" # Remove the name of the metadata variable from the start
+                title="${title#\"}" # Remove the quote at the start of the parsed variable
 
                 author="$(grep "Author::" <<< $metadata)"
-                author="${author/%\"/}"
-                author="${author/#Author:: /}"
-                author="${author/#\"/}"
+                author="${author%\"}"
+                author="${author#Author:: }"
+                author="${author#\"}"
                 
                 description="$(grep "Description::" <<< $metadata)"
-                description="${author/%\"/}"
-                description="${description/#Description:: /}"
-                description="${description/#\"/}"
+                description="${author%\"}"
+                description="${description#Description:: }"
+                description="${description#\"}"
 
                 language=$(grep "Language::" <<< $metadata | cut -d '"' -f2)
                 thumbnail=$(grep "Thumbnail::" <<< $metadata | cut -d '"' -f2)
