@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+        <!-- Basic Metadata -->
+        <meta charset="utf-8" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="generator" content="Arise" />
+
+        <title>Bash Static Site Generator · Arise</title>
+        <meta name="description" content="Arise is the most polished cloud-native static site generator written in Bash.">
+        <meta name="author" content="Spectra Secure">
+        <!-- End Basic Metadata -->
+
+        <!-- OpenGraph Metadata -->
+        <meta property="og:site_name" content="Arise" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Bash Static Site Generator · Arise" />
+        <meta property="og:description" content="Arise is the most polished cloud-native static site generator written in Bash." />
+        <meta property="og:url" content="https://ari.se.net/" />
+        <meta property="og:image" content="https://ari.se.net/arise-icon.png" />
+        <meta property="article:published_time" content="2022-09-17" />
+        <meta property="article:modified_time" content="2022-09-17" />
+        <!-- End OpenGraph Metadata -->
+    
+        <!-- Twitter Metadata -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Bash Static Site Generator · Arise" />
+        <meta name="twitter:description" content="Arise is the most polished cloud-native static site generator written in Bash." />
+        <meta name="twitter:url" content="https://ari.se.net/" />
+        <meta name="twitter:image" content="https://ari.se.net/arise-icon.png" />
+        <!-- End Twitter Metadata -->
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/config/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/config/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/config/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/config/favicon/site.webmanifest">
+        <link rel="mask-icon" href="/config/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/config/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="/config/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <!-- End Favicon -->
+
+        <!-- Styesheet+Logo -->
+        <style>
+                html * {font-family:monospace,sans-serif;} 
+                body {background-color:#121619;margin:40px auto;max-width:650px;padding:0 10px;color:#65f85a;}
+                a {color:#b8f1b4;}
+                hr {color:#65f85a;}
+                .topbar a {color:#65f85a;}
+        </style>
+        <link rel="stylesheet" href="/config/main.css"> 
+        <div class="logo"><a href="/"><img src="/config/logo.png" /></a></div>
+        <!-- End Styles+Logo -->
+
+        <!-- Navigation -->
+        <nav class="topbar">
+                <a href="/">Home</a> ⟛ <a href="/posts">Posts</a> ⟛ <a href="https://github.com/spectrasecure/arise">GitHub</a>
+        </nav>
+        <!-- End Navigation -->
+</head>
+
+<body>
+<h1 id="retro-doesnt-have-to-be-regressive">Retro doesn’t have to be regressive</h1>
+<p>Arise is a static site generator written in Bash, designed to be a fusion of ultra-stable timeless 90s technology and modern DevOps paradigms. Arise is designed around use cases like individual blogs and personal websites.</p>
+<p>You ever see one of those nineties zombie websites that hasn’t been updated in like thirty years but is still somehow running today? <a href="http://home.mcom.com/home/welcome.html">Stuff like this</a>. Can you imagine a modern website lasting that long without becoming a completely broken mess?</p>
+<p>We live in a world where the mindset of “move fast, break things” has trained web developers to keep stacking more and more overdesigned trash, one node framework or polyfill at a time, onto our websites. Over time, we’ve lost sight of the fact that at the end of the day a website is just a tool to share information with other people.</p>
+<p>Arise was built to show that you can take simple technology like Bash that is so set in stone as to be basically indestructible and use it to create modern web tools.</p>
+<h2 id="simplify-deployment">Simplify deployment</h2>
+<p>90s websites may have lasted forever, but no one likes setting up a janky webserver on a computer in their closet. Arise is a modern cloud-native application that supports easy deployment to your cloud static site host of choice.</p>
+<p>Simply fork <a href="https://github.com/spectrasecure/arise">Arise on Github</a>, edit your site, and point your cloud vendor to your repository. The included CI workflow does all the hard work of building and deploying your site straight from the cloud.</p>
+<h2 id="timeless-tech-built-for-the-modern-web">Timeless tech built for the modern web</h2>
+<p>Arise websites may be spartan on the surface, but they are designed to take advantage of modern web conventions for rich content presence and SEO.</p>
+<ul>
+<li>Rich metadata for cross-site embeds with support for <a href="https://ogp.me/">OpenGraph</a> and <a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards">TwitterCard</a></li>
+<li>Dynamic sitemap generation for SEO</li>
+<li>Dynamic RSS feed generation</li>
+</ul>
+<h2 id="practical-pages-for-real-world-use">Practical pages for real-world use</h2>
+<p>Real websites don’t have just one page, but rather are built on top of hierarchies of linked pages filled with content. Arise builds websites that are designed to be modular and traversable.</p>
+<p>Arise supports the creation of dynamic index pages based on individual page metadata. Just tell Arise where you need an index, and it will build it for you all on its own.</p>
+<p>For an example of what the index pages created by Arise look like, check out the <a href="posts">Sample Posts</a> on this website.</p>
+<h2 id="get-started-with-arise">Get started with Arise</h2>
+<p>Arise is free open-source software, available on <a href="https://github.com/spectrasecure/arise">GitHub</a> under the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU AGPL License</a>.</p>
+
+        <!-- Page Footer -->
+        <div class="footer">
+                <p>Copyleft &copy 2022 <a href="https://twitter.com/spectrasecure">Spectra Secure</a> • All wrongs reserved</p>
+                <p>Built with 💚 using <a href="https://github.com/spectrasecure/arise">Arise</a>, a cloud-native static site generator written in Bash.</p>
+        </div>
+        <!-- End Page Footer -->
+
+</body>
+</html>
