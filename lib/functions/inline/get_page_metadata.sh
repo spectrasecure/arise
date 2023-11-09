@@ -50,10 +50,14 @@ get_page_metadata() {
                 modified_date="${modified_date#Modified Date:: }"
                 modified_date="${modified_date#\"}"
 
-                # Clean text metadata for XML special characters so we don't break the sitemap or RSS feed
+                # Clean metadata of XML special characters so we don't break the sitemap or RSS feed
                 title="$(clean_xml_string "$title")"
                 author="$(clean_xml_string "$author")"
                 description="$(clean_xml_string "$description")"
+                language="$(clean_xml_string "$language")"
+                thumbnail="$(clean_xml_string "$thumbnail")"
+                published_date="$(clean_xml_string "$published_date")"
+                modified_date="$(clean_xml_string "$modified_date")"
                 
                 # Optional page settings with default settings
 
