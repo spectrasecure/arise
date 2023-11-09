@@ -1,0 +1,39 @@
+# .github/workflows/ci-xml-reserved-characters.yml
+name: CI Test - XML Reserved Character Metadata Sanitisation
+
+on:
+  # Runs on everything except the main branch since this is only a concern for dev.
+  push:
+    branches:
+      - '**'
+      - '!main'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow one concurrent deployment
+concurrency:
+  group: "xml-reserved-characters"
+  cancel-in-progress: true
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Check XML Sanitisation
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v4
+
+      - name: Install pandoc
+        run: sudo apt-get install -y pandoc
+
+      - name: Build Arise
+        run: bash arise build
+    
+      - name: Run test suite
+        run: bash ci/xml-reserved-characters.sh

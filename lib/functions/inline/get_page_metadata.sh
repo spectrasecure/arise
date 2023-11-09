@@ -15,13 +15,49 @@ get_page_metadata() {
                 metadata=$(sed -e '/END ARISE/,$d' < $1)
 
                 # Main page metadata
-                title=$(grep "Title::" <<< $metadata | cut -d '"' -f2)
-                author=$(grep "Author::" <<< $metadata | cut -d '"' -f2)
-                description=$(grep "Description::" <<< $metadata | cut -d '"' -f2)
-                language=$(grep "Language::" <<< $metadata | cut -d '"' -f2)
-                thumbnail=$(grep "Thumbnail::" <<< $metadata | cut -d '"' -f2)
-                published_date=$(grep "Published Date::" <<< $metadata | cut -d '"' -f2)
-                modified_date=$(grep "Modified Date::" <<< $metadata | cut -d '"' -f2)
+                title="$(grep "Title::" <<< $metadata)" # Grab the line with the metadata we want
+                title="${title%\"}" # Remove the trailing quote at the end
+                title="${title#Title:: }" # Remove the name of the metadata variable from the start
+                title="${title#\"}" # Remove the quote at the start of the parsed variable
+
+                author="$(grep "Author::" <<< $metadata)"
+                author="${author%\"}"
+                author="${author#Author:: }"
+                author="${author#\"}"
+                
+                description="$(grep "Description::" <<< $metadata)"
+                description="${description%\"}"
+                description="${description#Description:: }"
+                description="${description#\"}"
+
+                language="$(grep "Language::" <<< $metadata)"
+                language="${language%\"}"
+                language="${language#Language:: }"
+                language="${language#\"}"
+                
+                thumbnail="$(grep "Thumbnail::" <<< $metadata)"
+                thumbnail="${thumbnail%\"}"
+                thumbnail="${thumbnail#Thumbnail:: }"
+                thumbnail="${thumbnail#\"}"
+
+                published_date="$(grep "Published Date::" <<< $metadata)"
+                published_date="${published_date%\"}"
+                published_date="${published_date#Published Date:: }"
+                published_date="${published_date#\"}"
+
+                modified_date="$(grep "Modified Date::" <<< $metadata)"
+                modified_date="${modified_date%\"}"
+                modified_date="${modified_date#Modified Date:: }"
+                modified_date="${modified_date#\"}"
+
+                # Clean metadata of XML special characters so we don't break the sitemap or RSS feed
+                title="$(clean_xml_string "$title")"
+                author="$(clean_xml_string "$author")"
+                description="$(clean_xml_string "$description")"
+                language="$(clean_xml_string "$language")"
+                thumbnail="$(clean_xml_string "$thumbnail")"
+                published_date="$(clean_xml_string "$published_date")"
+                modified_date="$(clean_xml_string "$modified_date")"
                 
                 # Optional page settings with default settings
 
