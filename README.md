@@ -57,10 +57,13 @@ All of the documentation for getting started with Arise can be found within this
 - GNU `awk`
     - **Used for:** `evaluate_inline` - Function that performs inline bash snippet evaluations. This is disabled by default because this functionality is still WIP.
     - **Why:** Using `awk` in any capacity is the equivalent of staring into a horrific eldrich abyss not meant for mere mortals. Making those commands portable is another story entirely.
-- GNU `sed`
-    - **Used for:** `build_header` - Function that populates headers with metadata from page source files
-    Dependency for the header metadata tag population. 
-    - **Why:** This script makes use of the GNU version of the '-i' flag. BSD sed will not let you run inline sed replacements without forcing you to do an extra file write to create a backup of the original file, which you then have to run ANOTHER command to delete (literally why).
+- `sed`
+    - **Used for:**
+        - `get_page_metadata` - Used to pull out the metadata header in Arise markdown files for further processing. Also used for cleaning up relative URLs generated from folder hierarchy.
+        - `build_page` - Used to pull out the metadata header in Arise markdown files for further processing.
+        - `build_sitemap` - Used to clean up URLs into the tags RSS wants them in.
+        - `evaluate_inline` - Yeah, I don't even want to think about the horrors I wrote in this function. It's not currently in use, and I'm pretty sure it will get a full rewrite before it becomes active, IF it becomes active...
+    - **Why:** `sed` is useful for parsing data out of blocks of text quickly and easily. However, much dogfooding has revealed that `sed` tends to be pretty unsuited for this application. As such, it is largely on the chopping block for replacement with native Bash pattern matching where possible.
 
 ## Wishlist / To-Do / Feature Ideas
 - Refactor inline bash evaluation function and enable its usage. Right now it only works on very tiny/simple snippets. The main reason I wrote the logic was because I thought it would be funny to implement (it was). Some refactoring is absolutely necessary to make this feature practical/useful and not just a good meme.
