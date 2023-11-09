@@ -112,7 +112,7 @@ The Arise header supports the following dynamic metadata tags, which will be pop
 - `{{published_date}}` - The [ISO-8601 short date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) (aka: YYYY-MM-DD) for when your page was originally published to your site.
 - `{{modified_date}}` - The [ISO-8601 short date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) (aka: YYYY-MM-DD) for when your page was last modified.
 
-Note that Arise automatically checks the relevant metadata strings (title, author, description) for XML-unsafe characters and replaces them with [XML escape codes](https://docs.oracle.com/cd/A97335_02/apps.102/bc4j/developing_bc_projects/obcCustomXml.htm) at runtime to ensure that you don't accidentally break your sitemap or RSS feed.
+Note that Arise automatically checks metadata strings for XML-unsafe characters and replaces them with [XML escape codes](https://docs.oracle.com/cd/A97335_02/apps.102/bc4j/developing_bc_projects/obcCustomXml.htm) at runtime. This ensures that you don't accidentally break your sitemap or RSS feed by having quotes or whatever in your page metadata.
 
 ## Caveats & Gotchas
 
