@@ -19,7 +19,7 @@ fi
 echo ""
 echo "Testing to ensure that the title is rendering as it should..."
 titletest="<title>Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34;"
-if [[ $(grep "$titletest" $testpage ]]
+if [[ $(grep "$titletest" $testpage) ]]
 then
         echo "SUCCESS!"
 else
