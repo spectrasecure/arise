@@ -19,32 +19,36 @@ build_header() {
                 [[ $content_header == "true" ]] && cat $config/content_header.html >> $1
                 
                 # Replace all tags with their value. Ampersands are a special character in sed, so we have to clean them up using bash string manipulation before running the sed global replace.
+                page_contents="$(cat $1)"
                 title=${title//&/\\&}
-                sed -i "s^{{title}}^$title^g" $1
+                page_contents="${page_contents//\{\{title\}\}/"$title"}"
 
                 author=${author//&/\\&}
-                sed -i "s^{{author}}^$author^g" $1
+                page_contents="${page_contents//\{\{author\}\}/"$author"}"
                 
                 description=${description//&/\\&}
-                sed -i "s^{{description}}^$description^g" $1
+                page_contents="${page_contents//\{\{description\}\}/"$description"}"
                 
                 language=${language//&/\\&}
-                sed -i "s^{{language}}^$language^g" $1
+                page_contents="${page_contents//\{\{language\}\}/"$language"}"
                 
                 thumbnail=${thumbnail//&/\\&}
-                sed -i "s^{{thumbnail}}^$thumbnail^g" $1
+                page_contents="${page_contents//\{\{thumbnail\}\}/"$thumbnail"}"
                 
-                sed -i "s^{{published_date}}^$published_date^g" $1
+                page_contents="${page_contents//\{\{published_date\}\}/"$published_date"}"
                 
-                sed -i "s^{{modified_date}}^$modified_date^g" $1
+                page_contents="${page_contents//\{\{modified_date\}\}/"$modified_date"}"
                 
                 canonical_url=${canonical_url//&/\\&}
-                sed -i "s^{{canonical_url}}^$canonical_url^g" $1
+                page_contents="${page_contents//\{\{canonical_url\}\}/"$canonical_url"}"
                 
                 base_url=${base_url//&/\\&}
-                sed -i "s^{{base_url}}^$base_url^g" $1
+                page_contents="${page_contents//\{\{base_url\}\}/"$base_url"}"
                 
                 global_name=${global_name//&/\\&}
-                sed -i "s^{{global_name}}^$global_name^g" $1
+                page_contents="${page_contents//\{\{global_name\}\}/"$global_name"}"
+
+                echo "$page_contents" > $1
+                page_contents=""
         }
 }
