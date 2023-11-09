@@ -29,6 +29,6 @@ else
         echo "$titletest"
         echo "==========="
         echo "Full line that contains a discrepancy:"
-        echo "$(grep '<title>' $testpage)"
+        echo "$(grep '<title>' $testpage | head -1)"
         exit 1
 fi
