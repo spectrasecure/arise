@@ -30,4 +30,5 @@ else
         echo "==========="
         echo "Full line that contains a discrepancy:"
         echo "$(grep '<title>' $testpage)"
+        exit 1
 fi
