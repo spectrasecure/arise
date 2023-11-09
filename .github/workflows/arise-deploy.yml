@@ -27,7 +27,7 @@ jobs:
     name: Deploy Arise
     steps:
       - name: git-checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install pandoc
         run: sudo apt-get install -y pandoc
