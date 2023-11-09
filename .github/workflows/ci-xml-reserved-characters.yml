@@ -35,5 +35,5 @@ jobs:
       - name: Build Arise
         run: bash arise build
     
-      - name: Push to live branch
-        run: ci/xml-reserved-characters.sh
+      - name: Run test suite
+        run: bash ci/xml-reserved-characters.sh
