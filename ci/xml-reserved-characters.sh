@@ -5,13 +5,13 @@ echo "This is a test suite to ensure that when a user tries to stick XML reserve
 echo ""
 echo ""
 echo "Testing to ensure the Arise site built the test suite page..."
-testpage='arise-out/posts/testsuite-xml-escape/index.html'
+testpage='arise-out/posts/ci-xml-reserved-characters/index.html'
 if [ -f $testpage ] 
 then
         echo "SUCCESS!"
 else
         echo "FAILED. No page was found where the test post is supposed to exist."
-        echo " - Check that you haven't moved the posts/testsuite-xml-escape folder somewhere else"
+        echo " - Check that you haven't moved the test post located in arise-source/posts somewhere else"
         echo " - Check that you haven't broken Arise entirely"
         echo "Good luck, choom!"
         exit 1
