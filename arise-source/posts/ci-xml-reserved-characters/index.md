@@ -1,5 +1,5 @@
 <!-- BEGIN ARISE ------------------------------
-Title:: "Test Suite - XML Reserved Characters & < > ' ""
+Title:: "CI Test Suite - XML Reserved Characters & < > ' ""
 
 Author:: "Spectra Secure & < > ' ""
 Description:: "This post tests if we are properly filtering XML reserved characters in page metadata & < > ' ""
@@ -10,6 +10,6 @@ Modified Date:: "2023011-08"
 
 ---- END ARISE \\ DO NOT MODIFY THIS LINE ---->
 
-# Test Suite - XML Reserved Characters
+# CI Test Suite - XML Reserved Characters
 
 This post tests if we are properly filtering XML reserved characters in page metadata.
