@@ -1,4 +1,0 @@
-User-agent: * 
-Disallow: https://ari.se.net/config/*
-
-Sitemap: https://ari.se.net/sitemap.xml
