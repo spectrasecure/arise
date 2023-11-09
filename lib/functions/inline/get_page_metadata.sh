@@ -15,7 +15,6 @@ get_page_metadata() {
                 metadata=$(sed -e '/END ARISE/,$d' < $1)
 
                 # Main page metadata
-                # For title, author, and metadata we have to be extra careful how we parse them because a user might want to have quotation marks in the actual content so we don't want that to break.
                 title="$(grep "Title::" <<< $metadata)" # Grab the line with the metadata we want
                 title="${title%\"}" # Remove the trailing quote at the end
                 title="${title#Title:: }" # Remove the name of the metadata variable from the start
@@ -31,10 +30,25 @@ get_page_metadata() {
                 description="${description#Description:: }"
                 description="${description#\"}"
 
-                language=$(grep "Language::" <<< $metadata | cut -d '"' -f2)
-                thumbnail=$(grep "Thumbnail::" <<< $metadata | cut -d '"' -f2)
-                published_date=$(grep "Published Date::" <<< $metadata | cut -d '"' -f2)
-                modified_date=$(grep "Modified Date::" <<< $metadata | cut -d '"' -f2)
+                language="$(grep "Language::" <<< $metadata)"
+                language="${language%\"}"
+                language="${language#Language:: }"
+                language="${language#\"}"
+                
+                thumbnail="$(grep "Thumbnail::" <<< $metadata)"
+                thumbnail="${thumbnail%\"}"
+                thumbnail="${thumbnail#Thumbnail:: }"
+                thumbnail="${thumbnail#\"}"
+
+                published_date="$(grep "Published Date::" <<< $metadata)"
+                published_date="${published_date%\"}"
+                published_date="${published_date#Published Date:: }"
+                published_date="${published_date#\"}"
+
+                modified_date="$(grep "Modified Date::" <<< $metadata)"
+                modified_date="${modified_date%\"}"
+                modified_date="${modified_date#Modified Date:: }"
+                modified_date="${modified_date#\"}"
 
                 # Clean text metadata for XML special characters so we don't break the sitemap or RSS feed
                 title="$(clean_xml_string "$title")"
