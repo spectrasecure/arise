@@ -3,7 +3,7 @@ testpage='arise-out/posts/ci-xml-reserved-characters/index.html'
 
 echo "Arise CI - XML Reserved Character Sanitisation"
 echo "=============================================="
-echo "This is a test suite to ensure that when a user tries to stick XML reserved characters into page metadata that such characters are properly converted to escape characters to ensure that they don't break the monolithic sitemap or RSS feed."
+echo "This is a test suite to ensure that when a user tries to stick XML reserved characters into page metadata, such characters are properly converted to escape characters. This ensures that such characters don't break the monolithic sitemap or RSS feed."
 echo ""
 echo "The way we do this is by having a test page in our template site (""$testpage"") which contains a post whose title, author, and destripction all contain the XML reserved characters (&<>'"'"'"). This test suite verifies that the output page has all of the reserved characters properly sanitised to the escape code versions, so that they're safe to handle within the site's XML sitemap and RSS feed."
 echo ""
