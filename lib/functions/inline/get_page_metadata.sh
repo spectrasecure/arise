@@ -27,7 +27,7 @@ get_page_metadata() {
                 author="${author#\"}"
                 
                 description="$(grep "Description::" <<< $metadata)"
-                description="${author%\"}"
+                description="${description%\"}"
                 description="${description#Description:: }"
                 description="${description#\"}"
 
