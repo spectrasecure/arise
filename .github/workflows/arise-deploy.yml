@@ -11,11 +11,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Allow one concurrent deployment
-concurrency:
-  group: "pages-staging"
-  cancel-in-progress: true
-
 # Default to bash
 defaults:
   run:
