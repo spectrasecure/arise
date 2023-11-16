@@ -21,13 +21,19 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Arise
     steps:
-      - name: Check if we should push to main or debug
+      - name: Check if we should deploy to prod or staging
         run: |
+          echo "SMART DEPLOY"
+          echo "============"
+          echo "We only want to deploy to prod if the branch that triggered this workflow is 'main'. Otherwise, we want the site to be deployed to staging..."
+          echo ""
           if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
-              echo "OUTPUT_BRANCH=html" >> "$GITHUB_ENV" # Feel free to change the value of OUTPUT_BRANCH. This is where Arise artefacts will be pushed for production.
+              # Feel free to change the value of OUTPUT_BRANCH. This is where Arise artefacts will be deployed for production.
+              echo "OUTPUT_BRANCH=html" >> "$GITHUB_ENV"
               echo "Workflow running from main branch. Pushing results to production deployment branch (html)."
           else
-              echo "OUTPUT_BRANCH=html-staging" >> "$GITHUB_ENV" # Feel free to change the value of OUTPUT_BRANCH. This is where Arise artefacts will be pushed for staging.
+              # Feel free to change the value of OUTPUT_BRANCH. This is where Arise artefacts will be deployed for staging.
+              echo "OUTPUT_BRANCH=html-staging" >> "$GITHUB_ENV"
               echo "Workflow running from a development branch. Pushing results to staging deployment branch (html-staging)."
           fi
 
