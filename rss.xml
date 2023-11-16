@@ -13,20 +13,20 @@
     </image>
     <atom:link href="https://ari.se.net/rss.xml" rel="self" type="application/rss+xml"/>
         <ttl>60</ttl>
-<lastBuildDate>Thu, 09 Nov 2023 01:19:13 +0000</lastBuildDate>
+<lastBuildDate>Thu, 16 Nov 2023 21:02:16 +0000</lastBuildDate>
+        <item>
+        <title>CI Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34;</title>
+        <dc:creator>Spectra Secure &#38; &#60; &#62; &#39; &#34;</dc:creator>
+        <description>This post tests if we are properly filtering XML reserved characters in page metadata &#38; &#60; &#62; &#39; &#34;</description>
+        <link>https://ari.se.net/posts/ci-xml-reserved-characters/</link>
+        <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+        </item>
         <item>
         <title>My Cool Post</title>
         <dc:creator>Spectra Secure</dc:creator>
         <description>This cool post is an example of a post published in Arise</description>
         <link>https://ari.se.net/posts/my-cool-post/</link>
         <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-        <title>Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34;</title>
-        <dc:creator>Spectra Secure &#38; &#60; &#62; &#39; &#34;</dc:creator>
-        <description>This post tests if we are properly filtering XML reserved characters in page metadata &#38; &#60; &#62; &#39; &#34;</description>
-        <link>https://ari.se.net/posts/testsuite-xml-escape/</link>
-        <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
         </item>
         <item>
         <title>Abolish Arasaka</title>

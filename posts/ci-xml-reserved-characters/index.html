@@ -7,7 +7,7 @@
         <meta name="HandheldFriendly" content="True" />
         <meta name="generator" content="Arise" />
 
-        <title>Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34; · Arise</title>
+        <title>CI Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34; · Arise</title>
         <meta name="description" content="This post tests if we are properly filtering XML reserved characters in page metadata &#38; &#60; &#62; &#39; &#34;">
         <meta name="author" content="Spectra Secure &#38; &#60; &#62; &#39; &#34;">
         <!-- End Basic Metadata -->
@@ -15,20 +15,20 @@
         <!-- OpenGraph Metadata -->
         <meta property="og:site_name" content="Arise" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34; · Arise" />
+        <meta property="og:title" content="CI Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34; · Arise" />
         <meta property="og:description" content="This post tests if we are properly filtering XML reserved characters in page metadata &#38; &#60; &#62; &#39; &#34;" />
-        <meta property="og:url" content="https://ari.se.net/posts/testsuite-xml-escape/" />
-        <meta property="og:image" content="https://ari.se.net/posts/testsuite-xml-escape/kanagawa.jpg" />
+        <meta property="og:url" content="https://ari.se.net/posts/ci-xml-reserved-characters/" />
+        <meta property="og:image" content="https://ari.se.net/posts/ci-xml-reserved-characters/kanagawa.jpg" />
         <meta property="article:published_time" content="2023-11-08" />
         <meta property="article:modified_time" content="2023011-08" />
         <!-- End OpenGraph Metadata -->
     
         <!-- Twitter Metadata -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34; · Arise" />
+        <meta name="twitter:title" content="CI Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34; · Arise" />
         <meta name="twitter:description" content="This post tests if we are properly filtering XML reserved characters in page metadata &#38; &#60; &#62; &#39; &#34;" />
-        <meta name="twitter:url" content="https://ari.se.net/posts/testsuite-xml-escape/" />
-        <meta name="twitter:image" content="https://ari.se.net/posts/testsuite-xml-escape/kanagawa.jpg" />
+        <meta name="twitter:url" content="https://ari.se.net/posts/ci-xml-reserved-characters/" />
+        <meta name="twitter:image" content="https://ari.se.net/posts/ci-xml-reserved-characters/kanagawa.jpg" />
         <!-- End Twitter Metadata -->
 
         <!-- Favicon -->
@@ -64,8 +64,9 @@
 
 <body>
 <p class="date">// 2023-11-08 // <i>by Spectra Secure &#38; &#60; &#62; &#39; &#34;</i></p>
-<h1 id="test-suite---xml-reserved-characters">Test Suite - XML Reserved Characters</h1>
-<p>This post tests if we are properly filtering XML reserved characters in page metadata.</p>
+<h1 id="ci-test-suite---xml-reserved-characters">CI Test Suite - XML Reserved Characters</h1>
+<p>This page is part of a test suite to ensure that when a user tries to stick XML reserved characters into page metadata, such characters are properly converted to escape characters. This way we ensure that such characters don’t break the monolithic sitemap or RSS feed.</p>
+<p>The way we do this is by having a test page in our template site which contains a post whose title, author, and destripction all contain the XML reserved characters (&amp;&lt;&gt;’"). This test suite verifies that this output page has all of the reserved characters properly sanitised to the escape code versions, so that they’re safe to handle within the site’s XML sitemap and RSS feed.</p>
 
         <!-- Page Footer -->
         <div class="footer">
