@@ -7,22 +7,22 @@
 
 ## Overview
 
-There was a time before React, before Wordpress, and before even javascript and php. And the webmasters who ran the 'net back then made do with what they had. They wrangled their webservers to the fullest and they hacked together sites that could do what they need-- somehow. 
+There was a time before React, before Wordpress, and before even javascript and php. And the webmasters who ran the 'net back then made do with what they had. They wrangled their webservers to the fullest and they hacked together sites that could do what they need. 
 
-The web has grown up a lot since then, but unfortunately many of the modern tools we've built on top of are just way too complicated to maintain on the day-to-day without a fully staffed corporate webdev team.
+The web has grown up a lot since then, but the mentality of "move fast and break things" has created a landscape of flaky tools never meant to last more than a few years without constant laborious maintenance. You should be able to run a functional and pleasant website without needing to be a fully staffed corporate webdev team.
 
-The goal of Arise is to take the lessons of yesteryear and make something novel. Arise is a cloud-native static site generator written in Bash, designed to be a fusion of ultra-stable timeless 90s technology and modern DevOps paradigms. Arise is designed around use cases like individual blogs and personal websites.
+The goal of Arise is to take the lessons of yesteryear and make something novel. Arise is a cloud-native static site generator written in Bash, designed to be a fusion of ultra-stable 90s technology and modern DevOps paradigms. Arise is designed around use cases like individual blogs and personal websites.
 
 ## Why Use Arise
 
-Arise is written in Bash with very few dependencies outside of the standard GNU toolchain. Arise is designed with longterm simplicity and maintainability in mind. It is unlikely that the core code Arise runs on will break in the near future due to language or dependency updates.
+Arise is written in Bash with very few dependencies outside of the standard GNU toolchain. Arise is designed with long term simplicity and maintainability in mind. Beyond just being a static site generator that doesn't suck, the core development philosphy behind Arise is to minimise the risk of breaking in the near future due to language or dependency updates.
 
 Arise supports modern SEO features that are built into your pages out of the box without any extra effort necessary:
 - [OpenGraph](https://ogp.me/) and [TwitterCard](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) support for rich embed details
 - Dynamically generated RSS feed
 - Dynamically generated search engine sitemap
 
-Arise is built to be practical and let you build a website that actually has real content on it and isn't just a single-page placeholder. Arise uses a modular page architecture with support for dynamically generated metadata-rich index pages to keep your site hierarchy traversable by end users.
+Arise is built to be practical and let you build a multi-page website that actually has real content on it. Arise uses a modular page architecture with support for dynamically generated metadata-rich index pages to keep your site hierarchy traversable by end users.
 
 ## Live Example
 
