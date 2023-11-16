@@ -69,7 +69,7 @@ All of the documentation for getting started with Arise can be found within this
 
 For development purposes, we use CI testing to ensure that new code changes don't break Arise while in development. CI-related scripts are bundled in `/ci` and CI-related workflows are named with the convention of `/.github/workflows/ci-*`. **As a non-maintainer who is not making modifications to the Arise source code, you can simply delete (or just ignore) the CI tests if you don't need them.**
 
-In order to maximise the amount of [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) we do in testing, the Arise CI tests are run against actual pages bundled as part of the default website (https://ari.se.net). This means that once you replace the default site with your own custom website, the CI tests will break because the dummy pages they rely on no longer exist.
+In order to maximise the amount of [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) we do in testing, CI tests are run against actual pages bundled as part of the default website (https://ari.se.net). This means that once you replace the default site with your own custom website, the CI tests will break because the dummy pages they rely on no longer exist.
 
 ## Wishlist / To-Do / Feature Ideas
 - Refactor inline bash evaluation function and enable its usage. Right now it only works on very tiny/simple snippets. The main reason I wrote the logic was because I thought it would be funny to implement (it was). Some refactoring is absolutely necessary to make this feature practical/useful and not just a good meme.
