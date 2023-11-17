@@ -13,13 +13,13 @@
     </image>
     <atom:link href="https://ari.se.net/rss.xml" rel="self" type="application/rss+xml"/>
         <ttl>60</ttl>
-<lastBuildDate>Tue, 21 Feb 2023 19:15:34 +0000</lastBuildDate>
+<lastBuildDate>Fri, 17 Nov 2023 00:10:37 +0000</lastBuildDate>
         <item>
-        <title>Abolish Arasaka</title>
-        <dc:creator>Johnny Silverhand</dc:creator>
-        <description>I saw Saburo Arasaka at a grocery store in Night City yesterday.</description>
-        <link>https://ari.se.net/posts/abolish-arasaka/</link>
-        <pubDate>Wed, 12 May 2077 00:00:00 +0000</pubDate>
+        <title>CI Test Suite - XML Reserved Characters &#38; &#60; &#62; &#39; &#34;</title>
+        <dc:creator>Spectra Secure &#38; &#60; &#62; &#39; &#34;</dc:creator>
+        <description>This post tests if we are properly filtering XML reserved characters in page metadata &#38; &#60; &#62; &#39; &#34;</description>
+        <link>https://ari.se.net/posts/ci-xml-reserved-characters/</link>
+        <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
         </item>
         <item>
         <title>My Cool Post</title>
@@ -27,6 +27,13 @@
         <description>This cool post is an example of a post published in Arise</description>
         <link>https://ari.se.net/posts/my-cool-post/</link>
         <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+        <title>Abolish Arasaka</title>
+        <dc:creator>Johnny Silverhand</dc:creator>
+        <description>I saw Saburo Arasaka at a grocery store in Night City yesterday.</description>
+        <link>https://ari.se.net/posts/abolish-arasaka/</link>
+        <pubDate>Wed, 12 May 2077 00:00:00 +0000</pubDate>
         </item>
 </channel>
 </rss>
