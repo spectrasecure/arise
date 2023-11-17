@@ -7,22 +7,22 @@
 
 ## Overview
 
-There was a time before React, before Wordpress, and before even javascript and php. And the webmasters who ran the 'net back then made do with what they had. They wrangled their webservers to the fullest and they hacked together sites that could do what they need-- somehow. 
+There was a time before React, before Wordpress, and before even javascript and php. And the webmasters who ran the 'net back then made do with what they had. They wrangled their webservers to the fullest and they hacked together sites that could do what they need. 
 
-The web has grown up a lot since then, but unfortunately many of the modern tools we've built on top of are just way too complicated to maintain on the day-to-day without a fully staffed corporate webdev team.
+The web has grown up a lot since then, but the mentality of "move fast and break things" has created a landscape of flaky tools never meant to last more than a few years without constant laborious maintenance. You should be able to run a functional and pleasant website without needing to be a fully staffed corporate webdev team.
 
-The goal of Arise is to take the lessons of yesteryear and make something novel. Arise is a cloud-native static site generator written in Bash, designed to be a fusion of ultra-stable timeless 90s technology and modern DevOps paradigms. Arise is designed around use cases like individual blogs and personal websites.
+The goal of Arise is to take the lessons of yesteryear and make something novel. Arise is a cloud-native static site generator written in Bash, designed to be a fusion of ultra-stable 90s technology and modern DevOps paradigms. Arise is designed around use cases like individual blogs and personal websites.
 
 ## Why Use Arise
 
-Arise is written in Bash with very few dependencies outside of the standard GNU toolchain. Arise is designed with longterm simplicity and maintainability in mind. It is unlikely that the core code Arise runs on will break in the near future due to language or dependency updates.
+Arise is written in Bash with very few dependencies outside of the standard GNU toolchain. Arise is designed with long term simplicity and maintainability in mind. Beyond just being a static site generator that doesn't suck, the core development philosphy behind Arise is to minimise the risk of breaking in the near future due to language or dependency updates.
 
 Arise supports modern SEO features that are built into your pages out of the box without any extra effort necessary:
 - [OpenGraph](https://ogp.me/) and [TwitterCard](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) support for rich embed details
 - Dynamically generated RSS feed
 - Dynamically generated search engine sitemap
 
-Arise is built to be practical and let you build a website that actually has real content on it and isn't just a single-page placeholder. Arise uses a modular page architecture with support for dynamically generated metadata-rich index pages to keep your site hierarchy traversable by end users.
+Arise is built to be practical and let you build a multi-page website that actually has real content on it. Arise uses a modular page architecture with support for dynamically generated metadata-rich index pages to keep your site hierarchy traversable by end users.
 
 ## Live Example
 
@@ -57,10 +57,19 @@ All of the documentation for getting started with Arise can be found within this
 - GNU `awk`
     - **Used for:** `evaluate_inline` - Function that performs inline bash snippet evaluations. This is disabled by default because this functionality is still WIP.
     - **Why:** Using `awk` in any capacity is the equivalent of staring into a horrific eldrich abyss not meant for mere mortals. Making those commands portable is another story entirely.
-- GNU `sed`
-    - **Used for:** `build_header` - Function that populates headers with metadata from page source files
-    Dependency for the header metadata tag population. 
-    - **Why:** This script makes use of the GNU version of the '-i' flag. BSD sed will not let you run inline sed replacements without forcing you to do an extra file write to create a backup of the original file, which you then have to run ANOTHER command to delete (literally why).
+- `sed`
+    - **Used for:**
+        - `get_page_metadata` - Used to pull out the metadata header in Arise markdown files for further processing. Also used for cleaning up relative URLs generated from folder hierarchy.
+        - `build_page` - Used to pull out the metadata header in Arise markdown files for further processing.
+        - `build_sitemap` - Used to clean up URLs into the tags RSS wants them in.
+        - `evaluate_inline` - Yeah, I don't even want to think about the horrors I wrote in this function. It's not currently in use, and I'm pretty sure it will get a full rewrite before it becomes active, IF it becomes active...
+    - **Why:** `sed` is useful for parsing data out of blocks of text quickly and easily. However, much dogfooding has revealed that `sed` tends to be pretty unsuited for this application. As such, it is largely on the chopping block for replacement with native Bash pattern matching where possible.
+
+## CI Testing
+
+For development purposes, we use CI testing to ensure that new code changes don't break Arise while in development. CI-related scripts are bundled in `/ci` and CI-related workflows are named with the convention of `/.github/workflows/ci-*`. **As a non-maintainer who is not making modifications to the Arise source code, you can simply delete (or just ignore) the CI tests if you don't need them.**
+
+In order to maximise the amount of [dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) we do in testing, CI tests are run against actual pages bundled as part of the default website (https://ari.se.net). This means that once you replace the default site with your own custom website, the CI tests will break because the dummy pages they rely on no longer exist.
 
 ## Wishlist / To-Do / Feature Ideas
 - Refactor inline bash evaluation function and enable its usage. Right now it only works on very tiny/simple snippets. The main reason I wrote the logic was because I thought it would be funny to implement (it was). Some refactoring is absolutely necessary to make this feature practical/useful and not just a good meme.

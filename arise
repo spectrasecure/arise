@@ -1,8 +1,8 @@
 #!/bin/bash
 ######################################
 # ARISE
-# https://github.com/neonspectra/arise
-arise_version="1.0.0"
+# https://github.com/spectrasecure/arise
+arise_version="1.1.0"
 ######################################
 
 ##############################################################
